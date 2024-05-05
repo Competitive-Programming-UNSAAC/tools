@@ -33,10 +33,10 @@ x = {-b \pm \sqrt{b^2-4ac} \over 2a}
 
 The excel document with the data for compute the ranking must have the following format:
 
-| First Header  | Second Header | First Header  | Second Header | First Header  | Second Header | 
+| Codigo | Nombre | PuestoCuscontest | HandleCodeforces | Equipos | Categoria |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | Pancito | Intermediate |
+| 231442 | Yamir Wagner Florez Vega | WagnerYFV | 1 | Net team  | Beginner |
 
 ## Install dependencies
 
