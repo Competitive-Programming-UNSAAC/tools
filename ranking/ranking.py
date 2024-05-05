@@ -2,66 +2,61 @@ import requests
 import json
 import openpyxl
 import sys
-
+import configparser
 from tabulate import tabulate
-
-
-class Ranking:
-    users = []
-    totalUsers = 0
-    ratingAverage = 0
-    problemSolvedAverage = 0
-
-    def __init__(self, users, totalUsers, ratingAverage, problemSolvedAverage):
-        self.users = users
-        self.totalUsers = totalUsers
-        self.ratingAverage = ratingAverage
-        self.problemSolvedAverage = problemSolvedAverage
-
 
 class User:
     # Basic information
     id = ""
     name = ""
-    handle = ""
     position = 0
+    handle = ""
+    category = ""
 
-    # Codeforces info
-    rating = 0
-    problems = 0
+    # Codeforces information
+    ratingUser = 0
+    ratingProblems = 0
 
-    # Points
+    # Compute points
     positionPoints = 0.0
     ratingPoints = 0.0
     problemPoints = 0.0
     totalPoints = 0.0
 
-    def __init__(self, id, name, handle, position, rating, problems):
+    def __init__(self, id, name, position, handle, category):
         self.id = id
         self.name = name
         self.handle = handle
         self.position = position
-        self.rating = rating
-        self.problems = problems
+        self.category = category
+
+        print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.handle))
+        self.getUserRating()
+        self.getSolvedProblemsRating()
+        print("Loading basic information for \"{0}\"".format(self.name))
 
 
-def numberOfProblemsByUser(handle):
-    enlace = f"https://codeforces.com/api/user.status?handle={handle}"
+    def getUserRating(self):
+        link = f"https://codeforces.com/api/user.info?handles={self.handle}"
+        url = requests.get(link)
+        data = json.loads(url.text)
 
-    url = requests.get(enlace)
-    text = url.text
+        if 'rating' in data["result"][0].keys():
+            self.ratingUser = data["result"][0]["rating"]
 
-    # convert to JSON
-    data = json.loads(text)
+        # Minimum rating is 800
+        self.ratingUser = max(800, self.ratingUser)
 
-    NroProblem = len(data["result"])
 
-    problemSolved = set()
+    def getSolvedProblemsRating(self):
+        link = f"https://codeforces.com/api/user.status?handle={self.handle}"
+        url = requests.get(link)
+        data = json.loads(url.text)
 
-    for submissions in data["result"]:
-        if submissions['verdict'] == "OK":
+        problemSolved = {}
+        for submissions in data["result"]:
+            # Prepare id for the problem
             key = ""
-
             if 'problemsetName' in submissions["problem"].keys():
                 key += submissions["problem"]["problemsetName"]
 
@@ -69,134 +64,146 @@ def numberOfProblemsByUser(handle):
                 key += str(submissions["problem"]["contestId"])
 
             if 'index' in submissions["problem"].keys():
-                key += submissions["problem"]["index"]
+                key += submissions["problem"]["index"]    
 
-            problemSolved.add(key)
-    return len(problemSolved)
+            # Accumulate problem rating avoid duplicates
+            if  key not in problemSolved and submissions['verdict'] == "OK" and "rating" in submissions["problem"]:      
+                self.ratingProblems  += submissions["problem"]["rating"]  
+                problemSolved[key] = True
 
-
-def ratingbyUser(handle):
-    # create the link
-    link = f"https://codeforces.com/api/user.info?handles={handle}"
-
-    url = requests.get(link)
-    text = url.text
-
-    data = json.loads(text)
-
-    rating = 0
-    if 'rating' in data["result"][0].keys():
-        rating = data["result"][0]["rating"]
-
-    return rating
+            # Training contest problems have 1000 of raiting
+            if  key not in problemSolved and "rating" not in submissions["problem"]:
+                self.ratingProblems += 1000
+                problemSolved[key] = True
 
 
-def readDataFromFile(filepath):
+class Ranking:
+    config = {}
+    users = []
+    totalUsers = 0
+    totalTeams = 0
+    totalTeamsBeginner = 0
+    totalTeamsIntermediate = 0
+    ratingUserAverage = 0
+    ratingProblemsAverage = 0
+
+    def __init__(self, config, users):
+        self.config = config
+        self.users = users
+        self.totalUsers = len(users)
+        
+        print("Computing ranking...")
+        self.computeRanking()
+        print("Completed computing the ranking!")
+
+    def computeRanking(self):
+        ratingAccumulate = 0
+        ratingProblemsAccumulate = 0
+        maxRating = 0
+        maxProblems = 0
+
+        for user in self.users:
+            ratingAccumulate += user.ratingUser
+            ratingProblemsAccumulate += user.ratingProblems
+            maxRating = max(maxRating, user.ratingUser)
+            maxProblems = max(maxProblems, user.ratingProblems)
+
+        self.ratingUserAverage = ratingAccumulate / self.totalUsers
+        self.ratingProblemsAverage = ratingProblemsAccumulate / self.totalUsers
+
+        self.totalTeams = int(self.config["Contest"]["TotalTeams"])
+        self.totalTeamsBeginner = int(self.config["Contest"]["TotalTeamsBeginner"])
+        self.totalTeamsIntermediate = int(self.config["Contest"]["TotalTeamsIntermediate"])
+
+        positionWeight = int(self.config["Weight"]["Position"])
+        ratingWeight = int(self.config["Weight"]["Rating"])
+        problemsWeight = int(self.config["Weight"]["Problems"])
+
+        totalTeamsByCategory = 0
+        for user in self.users:
+            if user.category == "Beginner":
+                totalTeamsByCategory = self.totalTeamsBeginner
+            else:
+                totalTeamsByCategory = self.totalTeamsIntermediate
+            
+            user.positionPoints = (totalTeamsByCategory - user.position + 1) * positionWeight / totalTeamsByCategory
+            user.ratingPoints = (user.ratingUser / maxRating) * ratingWeight
+            user.problemsPoints = (user.ratingProblems / maxProblems) * problemsWeight
+            user.totalPoints = user.positionPoints + user.ratingPoints + user.problemsPoints
+
+        self.users.sort(key = lambda user : user.totalPoints, reverse = True)
+
+    def plotTable(self):
+        headers = ["#", "Id", "Name", "Handle", "Rating", "Problems", "Cuscontest XX", "Rating Points", "Problem Points" ,"Total Score"]
+        
+        table = []
+        position = 1
+        for user in self.users:
+            table.append([position, user.id, user.name, user.handle, user.ratingUser, user.ratingProblems, user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
+            position += 1
+
+        rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl')
+        print("Ranking completed!")
+        print("")
+        print("Total teams: {0}".format(self.totalTeams))
+        print("Total beginner teams: {0}".format(self.totalTeamsBeginner))
+        print("Total intermediate teams: {0}".format(self.totalTeamsIntermediate))
+        print("Total selection participants: {0}".format(self.totalUsers))
+        print("Average rating of participants: {0}".format(self.ratingUserAverage))
+        print("Average sum of difficulty of problem solved of participants: {0}".format(self.ratingProblemsAverage))
+        print("")
+        print(rankingTable)
+
+
+def readConfig(filepath):
+    print("Reading config from \"{0}\" file...".format(filepath))
+    config = configparser.ConfigParser()
+    config.read(filepath)
+    print("Config reading is completed!")
+    return config
+
+def readData(filepath):
     print("Reading data from \"{0}\" file...".format(filepath))
     dataframe = openpyxl.load_workbook(filepath)
     data = dataframe.active
     print("File reading is completed!")
     return data
 
+def getUsers(data, config):
+    idCol = int(config["Column"]["Id"])
+    nameCol = int(config["Column"]["Name"])
+    positionCol = int(config["Column"]["Position"])
+    handleCol = int(config["Column"]["Handle"])
+    categoryCol = int(config["Column"]["Category"])
 
-def getCompleteInfoByUser(data):
-    # Format file
-    # First rows column names
-    id_col = 1
-    name_col = 2
-    position_col = 3
-    handle_col = 4
-
+    print("Loading users information...")
     users = []
-
-    print("Loading complete information...")
     for row in range(2, data.max_row + 1):
-        id = data.cell(row, id_col).value
-        name = data.cell(row, name_col).value
-        position = data.cell(row, position_col).value
-        handle = data.cell(row, handle_col).value
+        id = data.cell(row, idCol).value
+        name = data.cell(row, nameCol).value
+        position = data.cell(row, positionCol).value
+        handle = data.cell(row, handleCol).value
+        category = data.cell(row, categoryCol).value
 
-        if handle == "" or handle == None or id == "" or id == None:
-            continue;
+        if id == None or name == None or handle == None:
+            continue
 
-        print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(name, handle))
-        codeforcesRating = ratingbyUser(handle)
-        codeforcesNumberOfSolvedProblems = numberOfProblemsByUser(handle)
-
-        print("Loading basic information for \"{0}\"".format(name))
-        user = User(id, name, handle, position, codeforcesRating, codeforcesNumberOfSolvedProblems)
+        user = User(id, name, position, handle, category)
         users.append(user)
 
-    print("Loading information is completed!")
+    print("Loading users information is completed!")
     return users
 
-
-def computeRanking(users, totalParticipants, ratingWeight, problemsWeight, positionWeight):
-    print("Computing ranking...")
-
-    # Computing Points
-    totalUsers = len(users)
-    ratingAverage = 0
-    problemSolvedAverage = 0
-    for user in users:
-        ratingAverage += user.rating
-        problemSolvedAverage += user.problems
-
-    ratingAverage = ratingAverage/totalUsers
-    problemSolvedAverage = problemSolvedAverage/totalUsers
-
-    # Complete information
-    for user in users:
-        user.positionPoints = (totalParticipants - user.position) * positionWeight / totalParticipants;
-        user.ratingPoints = max(ratingWeight, ratingWeight * user.rating / ratingAverage);
-        user.problemsPoints = max(problemsWeight, problemsWeight * user.problems / problemSolvedAverage);
-        user.totalPoints = user.positionPoints + user.ratingPoints + user.problemsPoints
-
-    # Sort by points
-    users.sort(key = lambda user : user.totalPoints, reverse = True)
-
-    ranking = Ranking(users, totalUsers, ratingAverage, problemSolvedAverage)
-    return ranking
-
-def plotRanking(ranking):
-    # Plot ranking
-    headers = ["Id", "Name", "Handle", "Rating", "Problems", "PPosition", "PRatingP", "PProblems" ,"PTotal"]
-    table = []
-    for user in ranking.users:
-        table.append([user.id, user.name, user.handle, user.rating, user.problems,  user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
-
-    rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl')
-    print("Ranking completed!")
-    print("")
-    print("Total participants in the selection: {0}".format(ranking.totalUsers))
-    print("Average rating of participants: {0}".format(ranking.ratingAverage))
-    print("Average number of problems solved of participants: {0}".format(ranking.problemSolvedAverage))
-    print("")
-    print(rankingTable)
-
-
 def main():
-    filepath = sys.argv[1]
+    dataFilepath = sys.argv[1]
+    configFilepath = "Config"
 
-    data = readDataFromFile(filepath)
-    users = getCompleteInfoByUser(data)
+    config = readConfig(configFilepath)
+    data = readData(dataFilepath)
 
-    totalParticipants = data.max_row - 1
-    ratingWeight = 20
-    problemsWeight = 30
-    positionWeight = 50
+    users = getUsers(data, config)
+    ranking = Ranking(config, users)
 
-    ranking = computeRanking(users, totalParticipants, ratingWeight, problemsWeight, positionWeight)
-    plotRanking(ranking)
-
-# Before run the script install dependencies
-# pip3 install openpyxl
-# pip3 install requests
-# pip3 install json
-# pip3 install tabulate
-
-# Run command: python3 ranking.py /Users/xkleiber/Downloads/data_test.xlsx
+    ranking.plotTable()
 
 main()
-
-

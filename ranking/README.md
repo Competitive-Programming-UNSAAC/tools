@@ -18,7 +18,7 @@ PositionPoints_s = \left( { CuscotestTotalTeamsByCategory_s - Position_s + 1 \ov
 
 ### Codeforces Rating Points
 
-If `n` students are participating in the selection. For each student `s`, these points will be the **Codeforces** rating information obtained by the student in the different contests.
+If `n` students are participating in the selection. For each student `s`, these points will be the **Codeforces rating information obtained by the student in the different contests**.
 
 The **minimum rating considered is 800**, that is, anyone who has **less than this rating bydefault will have 800**. 
 
@@ -60,7 +60,7 @@ TotalPoints_s = PositionPoints_s + RatingPoints_s + ProblemsPoints_s
 
 The excel document with the data for compute the ranking must have the following format:
 
-| Code | Name | CuscontestPosition | CodeforcesHandle | Team | Category |
+| Code | Name | Cuscontest Position | Codeforces Handle | Team | Category |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | Pancito | Intermediate |
 | 231442 | Yamir Wagner Florez Vega | 1 | WagnerYFV | Net team  | Beginner |
@@ -70,10 +70,7 @@ The excel document with the data for compute the ranking must have the following
 Dependencies that must be installed before running the script are the following:
 
 ```bash
-pip3 install openpyxl
-pip3 install requests
-pip3 install json
-pip3 install tabulate
+pip install -r requirements.txt
 ```
 
 ## Command to run
