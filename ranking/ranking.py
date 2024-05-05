@@ -80,12 +80,21 @@ class User:
 class Ranking:
     config = {}
     users = []
+
     totalUsers = 0
     totalTeams = 0
     totalTeamsBeginner = 0
     totalTeamsIntermediate = 0
+    totalTeamsAdvanced = 0
+
     ratingUserAverage = 0
     ratingProblemsAverage = 0
+    maxRatingUser = 0
+    maxRatingProblems = 0
+
+    positionWeight = 0
+    ratingWeight = 0
+    problemsWeight = 0
 
     def __init__(self, config, users):
         self.config = config
@@ -97,60 +106,69 @@ class Ranking:
         print("Completed computing the ranking!")
 
     def computeRanking(self):
-        ratingAccumulate = 0
+        ratingUserAccumulate = 0
         ratingProblemsAccumulate = 0
-        maxRating = 0
-        maxProblems = 0
 
         for user in self.users:
-            ratingAccumulate += user.ratingUser
+            ratingUserAccumulate += user.ratingUser
             ratingProblemsAccumulate += user.ratingProblems
-            maxRating = max(maxRating, user.ratingUser)
-            maxProblems = max(maxProblems, user.ratingProblems)
+            self.maxRatingUser = max(self.maxRatingUser, user.ratingUser)
+            self.maxRatingProblems = max(self.maxRatingProblems, user.ratingProblems)
 
-        self.ratingUserAverage = ratingAccumulate / self.totalUsers
+        self.ratingUserAverage = ratingUserAccumulate / self.totalUsers
         self.ratingProblemsAverage = ratingProblemsAccumulate / self.totalUsers
 
         self.totalTeams = int(self.config["Contest"]["TotalTeams"])
         self.totalTeamsBeginner = int(self.config["Contest"]["TotalTeamsBeginner"])
         self.totalTeamsIntermediate = int(self.config["Contest"]["TotalTeamsIntermediate"])
+        self.totalTeamsAdvanced = int(self.config["Contest"]["TotalTeamsAdvanced"])
 
-        positionWeight = int(self.config["Weight"]["Position"])
-        ratingWeight = int(self.config["Weight"]["Rating"])
-        problemsWeight = int(self.config["Weight"]["Problems"])
+        self.positionWeight = int(self.config["Weight"]["Position"])
+        self.ratingWeight = int(self.config["Weight"]["Rating"])
+        self.problemsWeight = int(self.config["Weight"]["Problems"])
 
         totalTeamsByCategory = 0
         for user in self.users:
             if user.category == "Beginner":
                 totalTeamsByCategory = self.totalTeamsBeginner
-            else:
+            if user.category == "Intermediate":
                 totalTeamsByCategory = self.totalTeamsIntermediate
+            if user.category == "Advanced":
+                totalTeamsByCategory = self.totalTeamsAdvanced
             
-            user.positionPoints = (totalTeamsByCategory - user.position + 1) * positionWeight / totalTeamsByCategory
-            user.ratingPoints = (user.ratingUser / maxRating) * ratingWeight
-            user.problemsPoints = (user.ratingProblems / maxProblems) * problemsWeight
+            user.positionPoints = (totalTeamsByCategory - user.position + 1) * self.positionWeight / totalTeamsByCategory
+            user.ratingPoints = (user.ratingUser / self.maxRatingUser) * self.ratingWeight
+            user.problemsPoints = (user.ratingProblems / self.maxRatingProblems) * self.problemsWeight
             user.totalPoints = user.positionPoints + user.ratingPoints + user.problemsPoints
 
         self.users.sort(key = lambda user : user.totalPoints, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Handle", "Rating", "Problems", "Cuscontest XX", "Rating Points", "Problem Points" ,"Total Score"]
+        headers = ["#", "Id", "Name", "Handle", "Category", "Rating", "Problems", "Cuscontest Points", "Rating Points", "Problem Points" ,"Total Score"]
         
         table = []
         position = 1
         for user in self.users:
-            table.append([position, user.id, user.name, user.handle, user.ratingUser, user.ratingProblems, user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
+            table.append([position, user.id, user.name, user.handle, user.category, user.ratingUser, user.ratingProblems, user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
             position += 1
 
         rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl')
         print("Ranking completed!")
         print("")
-        print("Total teams: {0}".format(self.totalTeams))
-        print("Total beginner teams: {0}".format(self.totalTeamsBeginner))
-        print("Total intermediate teams: {0}".format(self.totalTeamsIntermediate))
-        print("Total selection participants: {0}".format(self.totalUsers))
-        print("Average rating of participants: {0}".format(self.ratingUserAverage))
-        print("Average sum of difficulty of problem solved of participants: {0}".format(self.ratingProblemsAverage))
+        print("Cuscontest Position Weight: {0}".format(self.positionWeight))
+        print("Codeforces Rating Weight: {0}".format(self.ratingWeight))
+        print("Codeforces Accumulate Problem Rating Weight: {0}".format(self.problemsWeight))
+        print("")
+        print("Total Cuscontest teams: {0}".format(self.totalTeams))
+        print("Total Cuscontest beginner teams: {0}".format(self.totalTeamsBeginner))
+        print("Total Cuscontest intermediate teams: {0}".format(self.totalTeamsIntermediate))
+        print("Total Cuscontest Advanced teams: {0}".format(self.totalTeamsAdvanced))
+        print("")
+        print("Total participants in the selection: {0}".format(self.totalUsers))
+        print("Maximum rating of the participants in the selection: {0}".format(self.maxRatingUser))
+        print("Maximum accumulated problem rating of the participants in the selection: {0}".format(self.maxRatingProblems))
+        print("Average rating of the participants in the selection: {0}".format(self.ratingUserAverage))
+        print("Average of the accumulated problem rating of the participants in the selection: {0}".format(self.ratingProblemsAverage))
         print("")
         print(rankingTable)
 
@@ -169,7 +187,7 @@ def readData(filepath):
     print("File reading is completed!")
     return data
 
-def getUsers(data, config):
+def getUsers(config, data):
     idCol = int(config["Column"]["Id"])
     nameCol = int(config["Column"]["Name"])
     positionCol = int(config["Column"]["Position"])
@@ -185,7 +203,7 @@ def getUsers(data, config):
         handle = data.cell(row, handleCol).value
         category = data.cell(row, categoryCol).value
 
-        if id == None or name == None or handle == None:
+        if id == None or name == None or handle == None or category == None:
             continue
 
         user = User(id, name, position, handle, category)
@@ -201,7 +219,7 @@ def main():
     config = readConfig(configFilepath)
     data = readData(dataFilepath)
 
-    users = getUsers(data, config)
+    users = getUsers(config, data)
     ranking = Ranking(config, users)
 
     ranking.plotTable()

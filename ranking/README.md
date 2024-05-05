@@ -2,15 +2,15 @@
 
 This script compute the **ranking per student** using three specific information which are:
 
-- Position of the last CUSCONTEST
+- Position of the last **CUSCONTEST**
 - Codeforces rating
 - Number of problems solved in codeforces
 
-Additional for each information is considered a **weight** that can be edited in the script.
+Additional for each information is considered a **weight** that can be edited in the config file.
 
 ### Cuscontest Position Points
 
-For each student `s`, these points consider position in the last **CUSCOTEST** by category i.e `Beginner` and `Intermediate`:
+For each student `s`, these points consider position in the last **CUSCOTEST** by category i.e `Beginner`, `Intermediate` and `Advanced`:
 
 ```math
 PositionPoints_s = \left( { CuscotestTotalTeamsByCategory_s - Position_s + 1 \over CuscotestTotalTeamsByCategory_s }  \right) \left( PositionWeight \right)
@@ -50,7 +50,7 @@ ProblemsPoints_s = \left( {TotalSolvedProblems_s \over MaximumProblemSolved }  \
 
 ### Total Points
 
-For each student `s`, the total amount of points is simply the sum of the points mentioned above:
+For each student `s`, the total amount of points is simply the **sum of the points** mentioned above:
 
 ```math
 TotalPoints_s = PositionPoints_s + RatingPoints_s + ProblemsPoints_s
@@ -62,12 +62,22 @@ The excel document with the data for compute the ranking must have the following
 
 | Code | Name | Cuscontest Position | Codeforces Handle | Team | Category |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | Pancito | Intermediate |
-| 231442 | Yamir Wagner Florez Vega | 1 | WagnerYFV | Net team  | Beginner |
+| 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | Pancito | Advanced |
+| 231442 | Yamir Wagner Florez Vega | 1 | WagnerYFV | Net team  | Intermediate |
+| 215733 | Jhon Efrain Quispe Chura | 1 | zero_speed | Null | Beginner |
+
+## Configuration File
+
+`Config` file contains information about:
+
+- Document columns format
+- Weights assigned to each tupe of information
+- Information on the number of teams participating in the Cuscotest
+
 
 ## Install dependencies
 
-Dependencies that must be installed before running the script are the following:
+Install dependencies from the `requirements.txt` file with the following command:
 
 ```bash
 pip install -r requirements.txt
