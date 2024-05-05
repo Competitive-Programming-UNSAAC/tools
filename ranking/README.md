@@ -1,42 +1,64 @@
 ## Compute Ranking
 
-This script compute the ranking per student using three specific information which are:
-- position of the last CUSCONTEST
+This script compute the **ranking per student** using three specific information which are:
+
+- Position of the last CUSCONTEST
 - Codeforces rating
 - Number of problems solved in codeforces
 
-#### Cuscontest Position
+Additional for each information is considered a **weight** that can be edited in the script
+
+#### Cuscontest Position Points
+
+For each student `s`, these points consider position in the last **CUSCOTEST** by category i.e Beginner and Intermediate:
 
 ```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+PositionPoints_s = \left( { CuscotestTotalTeamsByCategory_s - Position_s + 1 \over CuscotestTotalTeamsByCategory_s }  \right) \left( PositionWeight \right)
 ```
 
-When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
+#### Codeforces Ratng Points
 
 ```math
-x = {-b \pm \sqrt{b^2-4ac} \over 2a}
+MaximumRating = \max_{1 \leq s \leq n} \left( Rating_s \right)
 ```
 
-#### Codeforces Ratng
-
 ```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+RatingPoints_s = \left( {Rating_s \over MaximumRating }  \right) \left( RatingWeight \right)
 ```
 
-#### Codeforces Solved Problems
+#### Codeforces Solved Problems Points
+
+Points for problems solved in codeforces will be calculated as follows:
+
 
 ```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+TotalSolvedProblems_s = \sum_{k=1}^p ProblemSolvedRating_k 
+```
+
+```math
+MaximumProblemSolved = \max_{1 \leq s \leq n} \left( TotalSolvedProblems_s \right)
+```
+
+```math
+ProblemsPoints_s = \left( {TotalSolvedProblems_s \over MaximumProblemSolved }  \right) \left( ProblemSolvedWeight \right)
+```
+
+#### Total Points
+
+The total amount of points is simply the sum of the points mentioned above:
+
+```math
+TotalPoints_s = PositionPoints_s + RatingPoints_s + ProblemsPoints_s
 ```
 
 ## Document format
 
 The excel document with the data for compute the ranking must have the following format:
 
-| Codigo | Nombre | PuestoCuscontest | HandleCodeforces | Equipos | Categoria |
+| Code | Name | CuscontestPosition | CodeforcesHandle | Team | Category |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | Pancito | Intermediate |
-| 231442 | Yamir Wagner Florez Vega | WagnerYFV | 1 | Net team  | Beginner |
+| 231442 | Yamir Wagner Florez Vega | 1 | WagnerYFV | Net team  | Beginner |
 
 ## Install dependencies
 
