@@ -1,13 +1,10 @@
 [Contest]
-TotalTeams = 56
-TotalTeamsBeginner = 18
-TotalTeamsIntermediate = 24
-TotalTeamsAdvanced = 14
+TotalTeams = 22
 
 [Weight]
-Rating = 20
-Problems = 30
-Position = 50
+Rating = 10
+Problems = 20
+Position = 70
 
 [Column]
 Id = 1
