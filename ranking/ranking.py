@@ -9,47 +9,49 @@ class User:
     # Basic information
     id = ""
     name = ""
-    position = 0
-    handle = ""
+    contestPosition = 0
+    codeforcesHandle = ""
+    credits = 0
+
+    # Category
     category = ""
 
     # Codeforces information
-    ratingUser = 0
-    ratingProblems = 0
+    codeforcesRating = 0
+    totalRatingSolvedProblems = 0
 
-    # Compute points
-    positionPoints = 0.0
-    ratingPoints = 0.0
-    problemPoints = 0.0
-    totalPoints = 0.0
+    # Compute scores
+    contestPositionScore = 0.0
+    codeforcesRatingScore = 0.0
+    ratingSolvedProblemScore = 0.0
+    totalScore = 0.0
 
-    def __init__(self, id, name, position, handle, category):
+    def __init__(self, id, name, contestPosition, codeforcesHandle, credits):
         self.id = id
         self.name = name
-        self.handle = handle
-        self.position = position
-        self.category = category
+        self.codeforcesHandle = codeforcesHandle
+        self.contestPosition = contestPosition
+        self.credits = credits
 
-        print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.handle))
-        self.getUserRating()
-        self.getSolvedProblemsRating()
+        print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.codeforcesHandle))
+        self.getCodeforcesRating()
+        self.getTotalRatingSolvedProblems()
         print("Loading basic information for \"{0}\"".format(self.name))
 
-
-    def getUserRating(self):
-        link = f"https://codeforces.com/api/user.info?handles={self.handle}"
+    def getCodeforcesRating(self):
+        link = f"https://codeforces.com/api/user.info?handles={self.codeforcesHandle}"
         url = requests.get(link)
         data = json.loads(url.text)
 
         if 'rating' in data["result"][0].keys():
-            self.ratingUser = data["result"][0]["rating"]
+            self.codeforcesRating = data["result"][0]["rating"]
 
         # Minimum rating is 800
-        self.ratingUser = max(800, self.ratingUser)
+        self.codeforcesRating = max(800, self.codeforcesRating)
 
 
-    def getSolvedProblemsRating(self):
-        link = f"https://codeforces.com/api/user.status?handle={self.handle}"
+    def getTotalRatingSolvedProblems(self):
+        link = f"https://codeforces.com/api/user.status?handle={self.codeforcesHandle}"
         url = requests.get(link)
         data = json.loads(url.text)
 
@@ -68,12 +70,12 @@ class User:
 
             # Accumulate problem rating avoid duplicates
             if  key not in problemSolved and submissions['verdict'] == "OK" and "rating" in submissions["problem"]:      
-                self.ratingProblems  += submissions["problem"]["rating"]  
+                self.totalRatingSolvedProblems  += submissions["problem"]["rating"]
                 problemSolved[key] = True
 
             # Training contest problems have 1000 of raiting
             if  key not in problemSolved and "rating" not in submissions["problem"]:
-                self.ratingProblems += 1000
+                self.totalRatingSolvedProblems += 1000
                 problemSolved[key] = True
 
 
@@ -82,16 +84,18 @@ class Ranking:
     users = []
 
     totalUsers = 0
-    totalTeams = 0
+    totalContestTeams = 0
 
-    ratingUserAverage = 0
-    ratingProblemsAverage = 0
-    maxRatingUser = 0
-    maxRatingProblems = 0
+    creditsThreshold = 0
 
-    positionWeight = 0
-    ratingWeight = 0
-    problemsWeight = 0
+    codeforcesRatingAverage = 0.0
+    totalRatingSolvedProblemsAverage = 0.0
+    maximumCodeforcesRating = 0
+    maximumTotalRatingSolvedProblem = 0
+
+    contestPositionWeight = 0
+    codeforcesRatingWeight = 0
+    totalRatingSolvedProblemsWeight = 0
 
     def __init__(self, config, users):
         self.config = config
@@ -102,56 +106,75 @@ class Ranking:
         self.computeRanking()
         print("Completed computing the ranking!")
 
+    def getUserCategory(self, user):
+        if user.credits > self.creditsThreshold:
+            return "Up"
+        else:
+            return "Low"
+
+    def getContestPositionScore(self, user):
+        return (self.totalContestTeams - user.contestPosition + 1) * self.contestPositionWeight / self.totalContestTeams
+
+    def getCodeforcesRatingScore(self, user):
+        return (user.codeforcesRating / self.maximumCodeforcesRating) * self.codeforcesRatingWeight
+
+    def getRatingSolvedProblemScore(self, user):
+        return (user.totalRatingSolvedProblems / self.maximumTotalRatingSolvedProblem) * self.totalRatingSolvedProblemsWeight
+
     def computeRanking(self):
-        ratingUserAccumulate = 0
-        ratingProblemsAccumulate = 0
+        self.totalContestTeams = int(self.config["Contest"]["TotalContestTeams"])
+        self.contestPositionWeight = int(self.config["Weight"]["ContestPosition"])
+        self.codeforcesRatingWeight = int(self.config["Weight"]["CodeforcesRating"])
+        self.totalRatingSolvedProblemsWeight = int(self.config["Weight"]["TotalRatingSolvedProblems"])
+        self.creditsThreshold = int(self.config["Credits"]["Threshold"])
+
+        totalCodeforcesRatingAccumulate = 0
+        totalRatingSolvedProblemAccumulate = 0
+        for user in self.users:
+            totalCodeforcesRatingAccumulate += user.codeforcesRating
+            totalRatingSolvedProblemAccumulate += user.totalRatingSolvedProblems
+            self.maximumCodeforcesRating = max(self.maximumCodeforcesRating, user.codeforcesRating)
+            self.maximumTotalRatingSolvedProblem = max(self.maximumTotalRatingSolvedProblem, user.totalRatingSolvedProblems)
+
+        self.codeforcesRatingAverage = totalCodeforcesRatingAccumulate / self.totalUsers
+        self.totalRatingSolvedProblemsAverage = totalRatingSolvedProblemAccumulate / self.totalUsers
 
         for user in self.users:
-            ratingUserAccumulate += user.ratingUser
-            ratingProblemsAccumulate += user.ratingProblems
-            self.maxRatingUser = max(self.maxRatingUser, user.ratingUser)
-            self.maxRatingProblems = max(self.maxRatingProblems, user.ratingProblems)
+            user.category = self.getUserCategory(user)
 
-        self.ratingUserAverage = ratingUserAccumulate / self.totalUsers
-        self.ratingProblemsAverage = ratingProblemsAccumulate / self.totalUsers
+            user.contestPositionScore = self.getContestPositionScore(user)
+            user.codeforcesRatingScore = self.getCodeforcesRatingScore(user)
+            user.ratingSolvedProblemScore = self.getRatingSolvedProblemScore(user)
 
-        self.totalTeams = int(self.config["Contest"]["TotalTeams"])
+            user.totalScore = user.contestPositionScore + user.codeforcesRatingScore + user.ratingSolvedProblemScore
 
-        self.positionWeight = int(self.config["Weight"]["Position"])
-        self.ratingWeight = int(self.config["Weight"]["Rating"])
-        self.problemsWeight = int(self.config["Weight"]["Problems"])
-
-        for user in self.users:  
-            user.positionPoints = (self.totalTeams - user.position + 1) * self.positionWeight / self.totalTeams 
-            user.ratingPoints = (user.ratingUser / self.maxRatingUser) * self.ratingWeight
-            user.problemsPoints = (user.ratingProblems / self.maxRatingProblems) * self.problemsWeight
-            user.totalPoints = user.positionPoints + user.ratingPoints + user.problemsPoints
-
-        self.users.sort(key = lambda user : user.totalPoints, reverse = True)
+        # Sort users by total score
+        self.users.sort(key = lambda user : user.totalScore, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Handle", "Category", "Position" , "Rating", "Problems", "Contest Points", "Rating Points", "Problem Points" ,"Total Score"]
+        headers = ["#", "Id", "Name", "Handle", "Category", "Contest" , "Rating", "Problems", "Contest Score", "Rating Score", "Problems Score" ,"Total Score"]
         
         table = []
-        position = 1
+        place = 1
         for user in self.users:
-            table.append([position, user.id, user.name, user.handle, user.category, user.position , user.ratingUser, user.ratingProblems, user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
-            position += 1
+            table.append([place, user.id, user.name, user.codeforcesHandle, user.category, user.contestPosition , user.codeforcesRating, user.totalRatingSolvedProblems, user.contestPositionScore, user.codeforcesRatingScore, user.ratingSolvedProblemScore, user.totalScore])
+            place += 1
 
-        rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl')
+        rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl', floatfmt=".2f")
+
         print("Ranking completed!")
         print("")
-        print("Contest Position Weight: {0}".format(self.positionWeight))
-        print("Codeforces Rating Weight: {0}".format(self.ratingWeight))
-        print("Codeforces Accumulate Problem Rating Weight: {0}".format(self.problemsWeight))
+        print("Contest Position Weight: {0}".format(self.contestPositionWeight))
+        print("Codeforces Rating Weight: {0}".format(self.codeforcesRatingWeight))
+        print("Codeforces Total Rating of Solved Problems Weight: {0}".format(self.totalRatingSolvedProblemsWeight))
         print("")
-        print("Total Contest Teams: {0}".format(self.totalTeams))
+        print("Total Contest Teams: {0}".format(self.totalContestTeams))
         print("")
         print("Total participants in the selection: {0}".format(self.totalUsers))
-        print("Maximum rating of the participants in the selection: {0}".format(self.maxRatingUser))
-        print("Maximum accumulated problem rating of the participants in the selection: {0}".format(self.maxRatingProblems))
-        print("Average rating of the participants in the selection: {0}".format(self.ratingUserAverage))
-        print("Average of the accumulated problem rating of the participants in the selection: {0}".format(self.ratingProblemsAverage))
+        print("Maximum Codeforces rating of the participants in the selection: {0}".format(self.maximumCodeforcesRating))
+        print("Maximum accumulated problem rating of the participants in the selection: {0}".format(self.maximumTotalRatingSolvedProblem))
+        print("Average rating of the participants in the selection: {0}".format(self.codeforcesRatingAverage))
+        print("Average of the accumulated problem rating of the participants in the selection: {0}".format(self.totalRatingSolvedProblemsAverage))
         print("")
         print(rankingTable)
 
@@ -173,23 +196,23 @@ def readData(filepath):
 def getUsers(config, data):
     idCol = int(config["Column"]["Id"])
     nameCol = int(config["Column"]["Name"])
-    positionCol = int(config["Column"]["Position"])
-    handleCol = int(config["Column"]["Handle"])
-    categoryCol = int(config["Column"]["Category"])
+    contestPositionCol = int(config["Column"]["ContestPosition"])
+    codeforcesHandleCol = int(config["Column"]["CodeforcesHandle"])
+    creditsCol = int(config["Column"]["Credits"])
 
     print("Loading users information...")
     users = []
     for row in range(2, data.max_row + 1):
         id = data.cell(row, idCol).value
         name = data.cell(row, nameCol).value
-        position = data.cell(row, positionCol).value
-        handle = data.cell(row, handleCol).value
-        category = data.cell(row, categoryCol).value
+        contestPosition = data.cell(row, contestPositionCol).value
+        codeforcesHandle = data.cell(row, codeforcesHandleCol).value
+        credits = data.cell(row, creditsCol).value
 
-        if id == None or name == None or handle == None or category == None:
+        if id == None or name == None or codeforcesHandle == None or contestPosition == None or credits == None:
             continue
 
-        user = User(id, name, position, handle, category)
+        user = User(id, name, contestPosition, codeforcesHandle, credits)
         users.append(user)
 
     print("Loading users information is completed!")

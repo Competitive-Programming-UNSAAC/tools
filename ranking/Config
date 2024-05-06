@@ -1,14 +1,17 @@
 [Contest]
-TotalTeams = 22
+TotalContestTeams = 22
 
 [Weight]
-Rating = 10
-Problems = 20
-Position = 70
+CodeforcesRating = 10
+TotalRatingSolvedProblems = 20
+ContestPosition = 70
 
 [Column]
 Id = 1
 Name = 2
-Position = 3
-Handle = 4
-Category = 6
+ContestPosition = 3
+CodeforcesHandle = 4
+Credits = 5
+
+[Credits]
+Threshold = 110
