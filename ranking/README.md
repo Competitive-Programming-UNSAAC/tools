@@ -13,7 +13,7 @@ Additional for each information is considered a **weight** that can be edited in
 For each student `s`, this score consider the position in the **Selective Contest**:
 
 ```math
-ContestPositionScore_s = \left( { ContestTotalTeams - ConstestPosition_s + 1 \over ContestTotalTeams }  \right) \left( ContestPositionWeight \right)
+ContestPositionScore_s = \left( { TotalContestTeams - ConstestPosition_s + 1 \over TotalContestTeams }  \right) \left( ContestPositionWeight \right)
 ```
 
 ### Codeforces Rating Score
@@ -55,18 +55,17 @@ RatingSolvedProblemScore_s = \left( {TotalRatingSolvedProblem_s \over MaximumTot
 For each student `s`, the total amount of points is simply the **sum of the points** mentioned above:
 
 ```math
-TotalPoints_s = ContestPositionScore_s + CodeforcesRatingScore_s + RatingSolvedProblemScore_s
+TotalScore_s = ContestPositionScore_s + CodeforcesRatingScore_s + RatingSolvedProblemScore_s
 ```
 
 ## Document format
 
 The excel document with the data for compute the ranking must have the following format:
 
-| Code | Name | Cuscontest Position | Codeforces Handle | Team | Category |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | Pancito | Advanced |
-| 231442 | Yamir Wagner Florez Vega | 1 | WagnerYFV | Net team  | Intermediate |
-| 215733 | Jhon Efrain Quispe Chura | 1 | zero_speed | Null | Beginner |
+| Id | Name | Contest Position | Codeforces Handle | Credits |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | 175 |
+| 215733 | Jhon Efrain Quispe Chura | 1 | zero_speed | 36 |
 
 ## Configuration File
 
@@ -75,7 +74,6 @@ The excel document with the data for compute the ranking must have the following
 - Document columns format
 - Weights assigned to each type of information
 - Information on the number of teams participating in the Cuscotest
-
 
 ## Install dependencies
 
