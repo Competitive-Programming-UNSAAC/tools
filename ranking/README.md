@@ -70,17 +70,17 @@ For selection, students have to take into account the following `requirements`:
 
 Taking this into account, **8 slots will be available** and will be filled as follows:
 
-- _Case #1_: **4 spots** will be filled with students who have **more than 110 accumulated credits** (from the 6th semester forward).
+- _Category A_: **4 spots** will be filled with students who have **more than 110 accumulated credits** (from the 6th semester forward).
 
-- _Case #2_: **3 spots** will be filled with students who have **less than or equal to 110 accumulated credits** (from the 1st semester to the 5th semester).
+- _Category B_: **3 spots** will be filled with students who have **less than or equal to 110 accumulated credits** (from the 1st semester to the 5th semester).
 
-- _Case #3_: **1 spot** will be filled with a **woman student**.
+- _Category W_: **1 place** will be filled with a **woman student**, the student can be _Category A_ or _Category B_
 
-For each of the `cases` mentioned above, the selection rule will be as follows:
+For each of the categories mentioned above, the selection rule will be as follows:
 
 1. The slots will be filled taking into account the ranking generated.
 2. If a student does not meet the requirements, the slot will be assigned to the next one in the ranking.
-3.  If there are no more students in the ranking for that case. The slot will be assigned for another case following the order _Case #1_, _Case #2_ and _Case #3_.
+3.  If there are no more students in the ranking for that category. The slot will be assigned for another category following the order _Category A_, _Category B_ and _Category W_.
 
 **_The student must keep in mind that once they accept the quota, they agree to participate in the event. If the student has doubts, he or she should consider giving the opportunity to other students._**
 

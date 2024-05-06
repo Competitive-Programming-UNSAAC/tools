@@ -108,9 +108,9 @@ class Ranking:
 
     def getUserCategory(self, user):
         if user.credits > self.creditsThreshold:
-            return "Up"
+            return "A"
         else:
-            return "Low"
+            return "B"
 
     def getContestPositionScore(self, user):
         return (self.totalContestTeams - user.contestPosition + 1) * self.contestPositionWeight / self.totalContestTeams
