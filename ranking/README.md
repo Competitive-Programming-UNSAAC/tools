@@ -13,7 +13,7 @@ Additional for each information is considered a **weight** that can be edited in
 For each student `s`, this score consider the position in the **Selective Contest**:
 
 ```math
-ContestPositionScore_s = \left( { ContestTotalTeams_s - ConstestPosition_s + 1 \over ContestTotalTeams_s }  \right) \left( ContestPositionWeight \right)
+ContestPositionScore_s = \left( { ContestTotalTeams - ConstestPosition_s + 1 \over ContestTotalTeams }  \right) \left( ContestPositionWeight \right)
 ```
 
 ### Codeforces Rating Score
