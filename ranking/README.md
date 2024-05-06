@@ -85,7 +85,7 @@ For each of the categories mentioned above, the selection process will be as fol
 3.  If there are **no more students in the ranking for that category**. The slot will be **assigned for another category** following the order **_Category A_**, **_Category B_** and **_Category W_**. That means that the selection process will be repeated.
 
 
-**_The student must keep in mind that once they accept the quota, they agree to participate in the event. If the student has doubts, he or she should consider giving the opportunity to other students._**
+**_The student must keep in mind that once they accept the slot, they agree to participate in the event. If the student has doubts, he or she should consider giving the opportunity to other students._**
 
 ## Document format
 
