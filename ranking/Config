@@ -1,8 +1,8 @@
 [Contest]
-TotalTeams = 54
-TotalTeamsBeginner = 10
-TotalTeamsIntermediate = 14
-TotalTeamsAdvanced = 34
+TotalTeams = 56
+TotalTeamsBeginner = 18
+TotalTeamsIntermediate = 24
+TotalTeamsAdvanced = 14
 
 [Weight]
 Rating = 20
