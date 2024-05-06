@@ -144,12 +144,12 @@ class Ranking:
         self.users.sort(key = lambda user : user.totalPoints, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Handle", "Category", "Rating", "Problems", "Cuscontest Points", "Rating Points", "Problem Points" ,"Total Score"]
+        headers = ["#", "Id", "Name", "Handle", "Category", "Position" , "Rating", "Problems", "Cuscontest Points", "Rating Points", "Problem Points" ,"Total Score"]
         
         table = []
         position = 1
         for user in self.users:
-            table.append([position, user.id, user.name, user.handle, user.category, user.ratingUser, user.ratingProblems, user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
+            table.append([position, user.id, user.name, user.handle, user.category, user.position , user.ratingUser, user.ratingProblems, user.positionPoints, user.ratingPoints, user.problemsPoints, user.totalPoints])
             position += 1
 
         rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl')
