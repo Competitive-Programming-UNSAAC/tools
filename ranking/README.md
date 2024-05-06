@@ -2,18 +2,18 @@
 
 This script compute the **ranking per student** using three specific information which are:
 
-- Position of the last **CUSCONTEST**
+- Position of the **Selective Contest**
 - Codeforces rating
 - Number of problems solved in codeforces
 
 Additional for each information is considered a **weight** that can be edited in the config file.
 
-### Cuscontest Position Points
+### Selective Contest Position Points
 
-For each student `s`, these points consider position in the last **CUSCOTEST** by category i.e `Beginner`, `Intermediate` and `Advanced`:
+For each student `s`, these points consider position in the **Selective Contest**:
 
 ```math
-PositionPoints_s = \left( { CuscotestTotalTeamsByCategory_s - Position_s + 1 \over CuscotestTotalTeamsByCategory_s }  \right) \left( PositionWeight \right)
+PositionPoints_s = \left( { ContestTotalTeams_s - Position_s + 1 \over ContestTotalTeams_s }  \right) \left( PositionWeight \right)
 ```
 
 ### Codeforces Rating Points

@@ -83,9 +83,6 @@ class Ranking:
 
     totalUsers = 0
     totalTeams = 0
-    totalTeamsBeginner = 0
-    totalTeamsIntermediate = 0
-    totalTeamsAdvanced = 0
 
     ratingUserAverage = 0
     ratingProblemsAverage = 0
@@ -119,24 +116,13 @@ class Ranking:
         self.ratingProblemsAverage = ratingProblemsAccumulate / self.totalUsers
 
         self.totalTeams = int(self.config["Contest"]["TotalTeams"])
-        self.totalTeamsBeginner = int(self.config["Contest"]["TotalTeamsBeginner"])
-        self.totalTeamsIntermediate = int(self.config["Contest"]["TotalTeamsIntermediate"])
-        self.totalTeamsAdvanced = int(self.config["Contest"]["TotalTeamsAdvanced"])
 
         self.positionWeight = int(self.config["Weight"]["Position"])
         self.ratingWeight = int(self.config["Weight"]["Rating"])
         self.problemsWeight = int(self.config["Weight"]["Problems"])
 
-        totalTeamsByCategory = 0
-        for user in self.users:
-            if user.category == "Beginner":
-                totalTeamsByCategory = self.totalTeamsBeginner
-            if user.category == "Intermediate":
-                totalTeamsByCategory = self.totalTeamsIntermediate
-            if user.category == "Advanced":
-                totalTeamsByCategory = self.totalTeamsAdvanced
-            
-            user.positionPoints = (totalTeamsByCategory - user.position + 1) * self.positionWeight / totalTeamsByCategory
+        for user in self.users:  
+            user.positionPoints = (self.totalTeams - user.position + 1) * self.positionWeight / self.totalTeams 
             user.ratingPoints = (user.ratingUser / self.maxRatingUser) * self.ratingWeight
             user.problemsPoints = (user.ratingProblems / self.maxRatingProblems) * self.problemsWeight
             user.totalPoints = user.positionPoints + user.ratingPoints + user.problemsPoints
@@ -144,7 +130,7 @@ class Ranking:
         self.users.sort(key = lambda user : user.totalPoints, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Handle", "Category", "Position" , "Rating", "Problems", "Cuscontest Points", "Rating Points", "Problem Points" ,"Total Score"]
+        headers = ["#", "Id", "Name", "Handle", "Category", "Position" , "Rating", "Problems", "Contest Points", "Rating Points", "Problem Points" ,"Total Score"]
         
         table = []
         position = 1
@@ -155,14 +141,11 @@ class Ranking:
         rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl')
         print("Ranking completed!")
         print("")
-        print("Cuscontest Position Weight: {0}".format(self.positionWeight))
+        print("Contest Position Weight: {0}".format(self.positionWeight))
         print("Codeforces Rating Weight: {0}".format(self.ratingWeight))
         print("Codeforces Accumulate Problem Rating Weight: {0}".format(self.problemsWeight))
         print("")
-        print("Total Cuscontest teams: {0}".format(self.totalTeams))
-        print("Total Cuscontest beginner teams: {0}".format(self.totalTeamsBeginner))
-        print("Total Cuscontest intermediate teams: {0}".format(self.totalTeamsIntermediate))
-        print("Total Cuscontest Advanced teams: {0}".format(self.totalTeamsAdvanced))
+        print("Total Contest Teams: {0}".format(self.totalTeams))
         print("")
         print("Total participants in the selection: {0}".format(self.totalUsers))
         print("Maximum rating of the participants in the selection: {0}".format(self.maxRatingUser))
