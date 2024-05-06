@@ -2,7 +2,7 @@
 
 This script compute the **ranking per student** using three specific information which are:
 
-- Position of the **SELECTIVE CONTEST**
+- Position of the **Selective Contest**
 - Codeforces rating
 - Number of problems solved in codeforces
 

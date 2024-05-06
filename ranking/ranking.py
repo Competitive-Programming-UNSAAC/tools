@@ -130,7 +130,7 @@ class Ranking:
         self.users.sort(key = lambda user : user.totalPoints, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Handle", "Category", "Position" , "Rating", "Problems", "Contest  Points", "Rating Points", "Problem Points" ,"Total Score"]
+        headers = ["#", "Id", "Name", "Handle", "Category", "Position" , "Rating", "Problems", "Contest Points", "Rating Points", "Problem Points" ,"Total Score"]
         
         table = []
         position = 1
@@ -145,7 +145,7 @@ class Ranking:
         print("Codeforces Rating Weight: {0}".format(self.ratingWeight))
         print("Codeforces Accumulate Problem Rating Weight: {0}".format(self.problemsWeight))
         print("")
-        print("Total Contest teams: {0}".format(self.totalTeams))
+        print("Total Contest Teams: {0}".format(self.totalTeams))
         print("")
         print("Total participants in the selection: {0}".format(self.totalUsers))
         print("Maximum rating of the participants in the selection: {0}".format(self.maxRatingUser))
