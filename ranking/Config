@@ -1,5 +1,5 @@
 [Contest]
-TotalContestTeams = 22
+TotalRegisteredTeams = 24
 
 [Weight]
 CodeforcesRating = 10
@@ -9,9 +9,11 @@ ContestPosition = 70
 [Column]
 Id = 1
 Name = 2
-ContestPosition = 3
+Gender = 3
 CodeforcesHandle = 4
 Credits = 5
+ContestRegistered = 7
+ContestPosition = 8
 
 [Credits]
 Threshold = 110
