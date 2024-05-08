@@ -209,7 +209,7 @@ def readData(filepath):
     data = dataframe.active
 
     with open(filepath) as file:
-        reader = csv.reader(file, delimiter=';')
+        reader = csv.reader(file, delimiter=',')
         for row in reader:
              data.append(row)
 

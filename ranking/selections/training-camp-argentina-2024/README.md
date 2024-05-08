@@ -24,7 +24,6 @@ IN PROGRESS...
 | 1 | Yishar Piero Nieto Barrientos | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | 1 | Yamir Wagner Florez Vega | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | 1 | Nahyely Alaniz Espinoza Colca | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
-| 1 | Alex Cuadros Melendez | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | 1 | Camila Alexandra Fernández Puente de la Vega | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | 1 | Etner Yury Quispe Arqque | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
 | 1 | Jesús Gustavo Ochoa Barrios | 0 | 0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 | 0/0 |
@@ -60,7 +59,6 @@ The final list of students selected by category is summarized in the following t
 | 1 | 204321 | Yishar Piero Nieto Barrientos | Yes/No | $\color{red}{A}$ |
 | 1 | 231442 | Yamir Wagner Florez Vega | Yes/No | $\color{green}{B}$ |
 | 1 | 200333 | Nahyely Alaniz Espinoza | Yes/No | $\color{purple}{C}$ |
-| 1 | 221456 | Alex Cuadros Melendez | Yes/No | $\color{red}{A}$ |
 | 1 | 231894 | Camila Alexandra Fernández Puente de la Vega | Yes/No | $\color{purple}{C}$ |
 | 1 | 211862 | Etner Yury Quispe Arqque | Yes/No | $\color{red}{A}$ |
 | 1 | 200519 | Jesús Gustavo Ochoa Barrios | Yes/No | $\color{red}{A}$ |
