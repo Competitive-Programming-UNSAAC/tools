@@ -120,5 +120,8 @@ To run the script, it is necessary the path to the CSV document that is sent thr
 In this sense, the command to execute the script is the following:
 
 ``` bash
- python3 ranking.py [filepath]
+pyhton3 ranking.py [data-file-path] [ranking-file-path]
+
+# Example:
+python3 ranking.py selections/training-camp-argentina-2024/registered.csv selections/training-camp-argentina-2024
 ```

@@ -1,4 +1,5 @@
 import sys
+import os
 import json
 import requests
 import openpyxl
@@ -175,7 +176,8 @@ class Ranking:
         table = []
         place = 1
         for user in self.users:
-            table.append([place, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore])
+            row = [place, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore]
+            table.append(row)
             place += 1
 
         rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl', floatfmt=".2f")
@@ -195,6 +197,23 @@ class Ranking:
         print("")
         print(rankingTable)
 
+    def writeFile(self, filepath):
+        headers = ["#", "Id", "Name", "Gender", "Handle", "Category", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
+
+        data = []
+        place = 1
+        for user in self.users:
+            row = [place, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore)]
+            data.append(row)
+            place += 1
+
+        filepath = os.path.join(filepath, "ranking.csv")
+        print("Writing ranking into \"{0}\" file".format(filepath))
+        with open(filepath, 'w', encoding='UTF8', newline='') as file:
+            writer = csv.writer(file, delimiter = ",")
+            writer.writerow(headers)
+            writer.writerows(data)
+        print("Ranking file completed!")
 
 def readConfig(filepath):
     print("Reading config from \"{0}\" file...".format(filepath))
@@ -247,6 +266,7 @@ def getUsers(config, data):
 
 def main():
     dataFilepath = sys.argv[1]
+    rankingFilepath = sys.argv[2]
     configFilepath = "Config"
 
     config = readConfig(configFilepath)
@@ -256,5 +276,6 @@ def main():
     ranking = Ranking(config, users)
 
     ranking.plotTable()
+    ranking.writeFile(rankingFilepath)
 
 main()
