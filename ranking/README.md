@@ -89,12 +89,13 @@ For each of the categories mentioned above, the selection process will be as fol
 
 ## Document format
 
-The excel document with the data for compute the ranking must have the following format:
+The CSV document with the data for compute the ranking must have the following format:
+Id;Name;Contest Position;Codeforces Handle;Credits;Semester;Gender;Join Discord;Discord;Contest Registered
 
-| Id | Name | Contest Position | Codeforces Handle | Credits |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 204321 | Yishar Piero Nieto Barrientos | 1 | theFixer | 175 |
-| 215733 | Jhon Efrain Quispe Chura | 1 | zero_speed | 36 |
+| Id | Name | Gender | Codeforces Handle | Credits | Semester | Contest Registered | Contest Position |
+| - | - | - | - | - | - | - | - |
+| 204321 | Yishar Piero Nieto Barrientos | Male | theFixer | 175 | 8 | Yes | 1 |
+| 215733 | Jhon Efrain Quispe Chura | Male | zero_speed | 26 | 2 | Yes | 2 |
 
 ## Configuration File
 
@@ -114,7 +115,7 @@ pip install -r requirements.txt
 
 ## Command to run
 
-To run the script, it is necessary the path to the excel document that is sent through the `filepah` parameter. 
+To run the script, it is necessary the path to the CSV document that is sent through the `filepah` parameter.
 
 In this sense, the command to execute the script is the following:
 

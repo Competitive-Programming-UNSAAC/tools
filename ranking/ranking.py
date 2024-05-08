@@ -1,7 +1,8 @@
-import requests
-import json
-import openpyxl
 import sys
+import json
+import requests
+import openpyxl
+import csv
 import configparser
 from tabulate import tabulate
 
@@ -9,9 +10,14 @@ class User:
     # Basic information
     id = ""
     name = ""
-    contestPosition = 0
+    gender = ""
     codeforcesHandle = ""
     credits = 0
+    contestRegistered = ""
+    contestPosition = 0
+
+    # Contest
+    isRegisteredOnContest = False
 
     # Category
     category = ""
@@ -26,17 +32,24 @@ class User:
     ratingSolvedProblemScore = 0.0
     totalScore = 0.0
 
-    def __init__(self, id, name, contestPosition, codeforcesHandle, credits):
+    def __init__(self, id, name, gender, codeforcesHandle, credits, contestRegistered , contestPosition):
         self.id = id
         self.name = name
+        self.gender = gender
         self.codeforcesHandle = codeforcesHandle
-        self.contestPosition = contestPosition
-        self.credits = credits
+        self.credits = int(credits)
+        self.contestRegistered = contestRegistered
+        self.contestPosition = int(contestPosition)
 
         print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.codeforcesHandle))
         self.getCodeforcesRating()
         self.getTotalRatingSolvedProblems()
+        self.isRegisteredOnContest()
         print("Loading basic information for \"{0}\"".format(self.name))
+
+    def isRegisteredOnContest(self):
+        if self.contestRegistered == "Yes":
+            self.isRegisteredOnContest = True
 
     def getCodeforcesRating(self):
         link = f"https://codeforces.com/api/user.info?handles={self.codeforcesHandle}"
@@ -84,6 +97,7 @@ class Ranking:
     users = []
 
     totalUsers = 0
+    totalRegisteredTeams = 0
     totalContestTeams = 0
 
     creditsThreshold = 0
@@ -122,7 +136,7 @@ class Ranking:
         return (user.totalRatingSolvedProblems / self.maximumTotalRatingSolvedProblem) * self.totalRatingSolvedProblemsWeight
 
     def computeRanking(self):
-        self.totalContestTeams = int(self.config["Contest"]["TotalContestTeams"])
+        self.totalRegisteredTeams = int(self.config["Contest"]["TotalRegisteredTeams"])
         self.contestPositionWeight = int(self.config["Weight"]["ContestPosition"])
         self.codeforcesRatingWeight = int(self.config["Weight"]["CodeforcesRating"])
         self.totalRatingSolvedProblemsWeight = int(self.config["Weight"]["TotalRatingSolvedProblems"])
@@ -135,6 +149,10 @@ class Ranking:
             totalRatingSolvedProblemAccumulate += user.totalRatingSolvedProblems
             self.maximumCodeforcesRating = max(self.maximumCodeforcesRating, user.codeforcesRating)
             self.maximumTotalRatingSolvedProblem = max(self.maximumTotalRatingSolvedProblem, user.totalRatingSolvedProblems)
+
+            # Count those registered in the contest
+            if user.isRegisteredOnContest:
+                self.totalContestTeams += 1
 
         self.codeforcesRatingAverage = totalCodeforcesRatingAccumulate / self.totalUsers
         self.totalRatingSolvedProblemsAverage = totalRatingSolvedProblemAccumulate / self.totalUsers
@@ -152,12 +170,12 @@ class Ranking:
         self.users.sort(key = lambda user : user.totalScore, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Handle", "Category", "Contest" , "Rating", "Problems", "Contest Score", "Rating Score", "Problems Score" ,"Total Score"]
+        headers = ["#", "Id", "Name", "Gender", "Handle", "Category", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
         
         table = []
         place = 1
         for user in self.users:
-            table.append([place, user.id, user.name, user.codeforcesHandle, user.category, user.contestPosition , user.codeforcesRating, user.totalRatingSolvedProblems, user.contestPositionScore, user.codeforcesRatingScore, user.ratingSolvedProblemScore, user.totalScore])
+            table.append([place, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore])
             place += 1
 
         rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl', floatfmt=".2f")
@@ -165,12 +183,11 @@ class Ranking:
         print("Ranking completed!")
         print("")
         print("Contest Position Weight: {0}".format(self.contestPositionWeight))
-        print("Codeforces Rating Weight: {0}".format(self.codeforcesRatingWeight))
         print("Codeforces Total Rating of Solved Problems Weight: {0}".format(self.totalRatingSolvedProblemsWeight))
-        print("")
-        print("Total Contest Teams: {0}".format(self.totalContestTeams))
-        print("")
+        print("Codeforces Rating Weight: {0}".format(self.codeforcesRatingWeight))
         print("Total participants in the selection: {0}".format(self.totalUsers))
+        print("Total registered teams: {0}".format(self.totalRegisteredTeams))
+        print("Total contest teams: {0}".format(self.totalContestTeams))
         print("Maximum Codeforces rating of the participants in the selection: {0}".format(self.maximumCodeforcesRating))
         print("Maximum accumulated problem rating of the participants in the selection: {0}".format(self.maximumTotalRatingSolvedProblem))
         print("Average rating of the participants in the selection: {0}".format(self.codeforcesRatingAverage))
@@ -188,31 +205,41 @@ def readConfig(filepath):
 
 def readData(filepath):
     print("Reading data from \"{0}\" file...".format(filepath))
-    dataframe = openpyxl.load_workbook(filepath)
+    dataframe = openpyxl.Workbook()
     data = dataframe.active
+
+    with open(filepath) as file:
+        reader = csv.reader(file, delimiter=';')
+        for row in reader:
+             data.append(row)
+
     print("File reading is completed!")
     return data
 
 def getUsers(config, data):
     idCol = int(config["Column"]["Id"])
     nameCol = int(config["Column"]["Name"])
-    contestPositionCol = int(config["Column"]["ContestPosition"])
+    genderCol = int(config["Column"]["Gender"])
     codeforcesHandleCol = int(config["Column"]["CodeforcesHandle"])
     creditsCol = int(config["Column"]["Credits"])
+    contestPositionCol = int(config["Column"]["ContestPosition"])
+    contestRegisteredCol = int(config["Column"]["ContestRegistered"])
 
     print("Loading users information...")
     users = []
     for row in range(2, data.max_row + 1):
         id = data.cell(row, idCol).value
         name = data.cell(row, nameCol).value
-        contestPosition = data.cell(row, contestPositionCol).value
+        gender = data.cell(row, genderCol).value
         codeforcesHandle = data.cell(row, codeforcesHandleCol).value
         credits = data.cell(row, creditsCol).value
+        contestPosition = data.cell(row, contestPositionCol).value
+        contestRegistered = data.cell(row, contestRegisteredCol).value
 
-        if id == None or name == None or codeforcesHandle == None or contestPosition == None or credits == None:
+        if id == None or name == None or gender == None or codeforcesHandle == None or credits == None or contestPosition == None or contestRegistered == None:
             continue
 
-        user = User(id, name, contestPosition, codeforcesHandle, credits)
+        user = User(id, name, gender, codeforcesHandle, credits, contestRegistered, contestPosition)
         users.append(user)
 
     print("Loading users information is completed!")
