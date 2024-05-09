@@ -123,5 +123,5 @@ In this sense, the command to execute the script is the following:
 pyhton3 ranking.py [data-file-path] [ranking-file-path]
 
 # Example:
-python3 ranking.py selections/training-camp-argentina-2024/registered.csv selections/training-camp-argentina-2024
+python3 ranking.py selection/training-camp-argentina-2024/registered.csv selection/training-camp-argentina-2024
 ```

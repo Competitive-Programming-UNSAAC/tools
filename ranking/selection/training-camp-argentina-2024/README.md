@@ -12,7 +12,7 @@ For more details about the registered students, see the [registration file](regi
 
 ## Contest
 
-IN PROGRESS...
+IN PROGRESS ...
 
 ## ScoreBoard
 | Rank | Name | Score| Penalty | A | B | C | D | E | F | G | H | I | J |
