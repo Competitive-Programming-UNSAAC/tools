@@ -95,7 +95,8 @@ Id;Name;Contest Position;Codeforces Handle;Credits;Semester;Gender;Join Discord;
 | Id | Name | Gender | Codeforces Handle | Credits | Semester | Contest Registered | Contest Position |
 | - | - | - | - | - | - | - | - |
 | 204321 | Yishar Piero Nieto Barrientos | Male | theFixer | 175 | 8 | Yes | 1 |
-| 215733 | Jhon Efrain Quispe Chura | Male | zero_speed | 26 | 2 | Yes | 2 |
+| 231447 | Rosy Aurely Montalvo Solórzano | Female | LittleProgramer4 | 43 | 3 | Yes | 2 |
+| 215733 | Jhon Efrain Quispe Chura | Male | zero_speed | 26 | 2 | No | 3 |
 
 ## Configuration File
 
