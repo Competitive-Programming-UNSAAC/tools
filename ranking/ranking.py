@@ -198,12 +198,12 @@ class Ranking:
         print(rankingTable)
 
     def writeFile(self, filepath):
-        headers = ["#", "Id", "Name", "Gender", "Handle", "Category", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
+        headers = ["#", "Id", "Name", "Gender", "Handle", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score", "Category", "Attend"]
 
         data = []
         place = 1
         for user in self.users:
-            row = [place, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore)]
+            row = [place, user.id, user.name, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore), user.category, "No"]
             data.append(row)
             place += 1
 
