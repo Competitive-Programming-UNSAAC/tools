@@ -68,9 +68,9 @@ For selection, students have to take into account the following `requirements`:
 
 3. In the case of the student have financial support from the university. **Upon returning, the student must report to the university for the expenses incurred**.
 
-Taking this into account, **8 slots will be available** and will be filled as follows:
+Taking this into account, **9 slots will be available** and will be filled as follows:
 
-- _Category A_: **4 spots** will be filled with students who have **more than 110 accumulated credits** (from the 6th semester forward).
+- _Category A_: **5 spots** will be filled with students who have **more than 110 accumulated credits** (from the 6th semester forward).
 
 - _Category B_: **3 spots** will be filled with students who have **less than or equal to 110 accumulated credits** (from the 1st semester to the 5th semester).
 
