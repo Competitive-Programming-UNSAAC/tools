@@ -123,7 +123,7 @@ class Ranking:
 
     def getUserCategory(self, user):
         if user.gender == "Female":
-            return "C"
+            return "W"
         if user.credits > self.creditsThreshold:
             return "A"
         else:

@@ -58,16 +58,16 @@ The final list of students selected by category is summarized in the following t
 | 1 | 230971 | Jose Daniel Mendoza Quispe | Yes/No | $\color{green}{B}$ |
 | 1 | 204321 | Yishar Piero Nieto Barrientos | Yes/No | $\color{red}{A}$ |
 | 1 | 231442 | Yamir Wagner Florez Vega | Yes/No | $\color{green}{B}$ |
-| 1 | 200333 | Nahyely Alaniz Espinoza | Yes/No | $\color{purple}{C}$ |
-| 1 | 231894 | Camila Alexandra Fernández Puente de la Vega | Yes/No | $\color{purple}{C}$ |
+| 1 | 200333 | Nahyely Alaniz Espinoza | Yes/No | $\color{purple}{W}$ |
+| 1 | 231894 | Camila Alexandra Fernández Puente de la Vega | Yes/No | $\color{purple}{W}$ |
 | 1 | 211862 | Etner Yury Quispe Arqque | Yes/No | $\color{red}{A}$ |
 | 1 | 200519 | Jesús Gustavo Ochoa Barrios | Yes/No | $\color{red}{A}$ |
 | 1 | 210927 | Jeliel Enriquez Araburu | Yes/No | $\color{green}{B}$ |
-| 1 | 222067 | Aracely Fiorela Corampa Palacios | Yes/No | $\color{purple}{C}$ |
+| 1 | 222067 | Aracely Fiorela Corampa Palacios | Yes/No | $\color{purple}{W}$ |
 | 1 | 200820 | Jose Emilio Atauchi Mamani | Yes/No | $\color{red}{A}$ |
 | 1 | 200826 | Jaime Antonio Rodriguez Phillco | Yes/No | $\color{red}{A}$ |
 | 1 | 231907 | Renzo Sebastian Quispe Pinares | Yes/No | $\color{green}{B}$ |
-| 1 | 231447 | Rosy Aurely Montalvo Solórzano | Yes/No | $\color{purple}{C}$ |
+| 1 | 231447 | Rosy Aurely Montalvo Solórzano | Yes/No | $\color{purple}{W}$ |
 | 1 | 220548 | Elvis Jair Casafranca Benavides | Yes/No | $\color{red}{A}$ |
 | 1 | 200518 | Anghelo Alagon Fernandez | Yes/No | $\color{red}{A}$ |
 | 1 | 204807 | Luis Manuel Tinoco Ccoto | Yes/No | $\color{red}{A}$ |
