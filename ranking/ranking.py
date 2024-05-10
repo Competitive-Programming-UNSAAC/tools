@@ -174,7 +174,7 @@ class Ranking:
             self.maximumTotalRatingSolvedProblem = max(self.maximumTotalRatingSolvedProblem, user.totalRatingSolvedProblems)
 
             # Count those registered in the contest
-            if user.isRegisteredOnContest:
+            if user.isRegisteredOnContest == True:
                 self.totalContestTeams += 1
 
         self.codeforcesRatingAverage = totalCodeforcesRatingAccumulate / self.totalUsers
