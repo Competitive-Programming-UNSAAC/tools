@@ -1,26 +1,26 @@
 #,Id,Name,Gender,Handle,Contest,Problems,Rating,Contest Score,Problems Score,Rating Score,Total Score,Category,Attend
-1,204321,Yishar Piero Nieto Barrientos,Male,theFixer,1,657200,1452,70.00,20.00,9.82,99.82,A,No
-2,210412,Jhamsid Romero Bernal,Male,User0286,1,626100,1478,70.00,19.05,10.00,99.05,A,No
-3,200820,Jose Emilio Atauchi Mamani,Male,FiboEm,1,587900,1223,70.00,17.89,8.27,96.17,A,No
-4,231442,Yamir Wagner Florez Vega,Male,WagnerYFV,1,259300,1071,70.00,7.89,7.25,85.14,B,No
-5,211862,Etner Yury Quispe Arqque,Male,Fan_Justino,1,217700,1246,70.00,6.63,8.43,85.06,A,No
-6,231447,Rosy Aurely Montalvo Solórzano,Female,LittleProgramer4,1,264100,854,70.00,8.04,5.78,83.82,W,No
-7,231865,Rayneld Fidel Castro Pari,Male,Ficapro,1,208400,883,70.00,6.34,5.97,82.32,B,No
-8,204803,Milton Alexis Pachar Lipa,Male,kiyopon_,1,170800,1000,70.00,5.20,6.77,81.96,A,No
-9,204807,Luis Manuel Tinoco Ccoto,Male,LuisTinoco,1,147600,1076,70.00,4.49,7.28,81.77,A,No
-10,231446,Adel Alejandro Merma Ccarhuarupay,Male,Adel0_mcc,1,158700,1021,70.00,4.83,6.91,81.74,B,No
-11,230971,Jose Daniel Mendoza Quispe,Male,F4nk1,1,167300,810,70.00,5.09,5.48,80.57,B,No
-12,215733,Jhon Efrain Quispe Chura,Male,zero_speed,1,130500,905,70.00,3.97,6.12,80.09,B,No
-13,200519,Jesús Gustavo Ochoa Barrios,Male,theReflexao,1,88600,1025,70.00,2.70,6.94,79.63,A,No
-14,200826,Jaime Antonio Rodriguez Phillco,Male,jaime_smurf_XD,1,45900,1210,70.00,1.40,8.19,79.58,A,No
-15,220548,Elvis Jair Casafranca Benavides,Male,elvisjcb,1,123100,800,70.00,3.75,5.41,79.16,B,No
-16,200520,Angela Vanessa Reynaga Flores,Female,vaneee,1,55600,994,70.00,1.69,6.73,78.42,W,No
-17,231907,Renzo Sebastian Quispe Pinares,Male,cbada,1,58000,890,70.00,1.77,6.02,77.79,B,No
-18,235389,Steffano Ricardo Caballero Zegarra,Male,steffanoforces,1,60900,815,70.00,1.85,5.51,77.37,B,No
-19,210927,Jeliel Enriquez Araburu,Male,jeffylish_369,1,20500,854,70.00,0.62,5.78,76.40,B,No
-20,200333,Nahyely Alaniz Espinoza Colca,Female,AlanizDreams,1,28800,800,70.00,0.88,5.41,76.29,W,No
-21,222067,Aracely Fiorela Corampa Palacios,Female,dbarafiocpenglish,1,17000,800,70.00,0.52,5.41,75.93,W,No
-22,182731,Yerson Joab Chirinos Vilca,Male,STYersonH,1,16000,800,70.00,0.49,5.41,75.90,A,No
-23,224872,Luis David Medma Canlla,Male,KingD777,1,6800,800,70.00,0.21,5.41,75.62,B,No
-24,231894,Camila Alexandra Fernández Puente de la Vega,Female,dylanX,25,15700,800,-3.04,0.48,5.41,2.85,W,No
-25,200518,Anghelo Alagon Fernandez,Male,anghelo_alagon,25,1600,831,-3.04,0.05,5.62,2.63,A,No
+1,210412,Jhamsid Romero Bernal,Male,User0286,1,626100,1478,70.00,19.05,10.00,99.05,A,No
+2,204321,Yishar Piero Nieto Barrientos,Male,theFixer,2,657200,1452,66.82,20.00,9.82,96.64,A,No
+3,200820,Jose Emilio Atauchi Mamani,Male,FiboEm,3,587900,1223,63.64,17.89,8.27,89.80,A,No
+4,211862,Etner Yury Quispe Arqque,Male,Fan_Justino,4,217700,1246,60.45,6.63,8.43,75.51,A,No
+5,231442,Yamir Wagner Florez Vega,Male,WagnerYFV,6,259300,1071,54.09,7.89,7.25,69.23,B,No
+6,204807,Luis Manuel Tinoco Ccoto,Male,LuisTinoco,5,147600,1076,57.27,4.49,7.28,69.04,A,No
+7,231865,Rayneld Fidel Castro Pari,Male,Ficapro,7,208400,883,50.91,6.34,5.97,63.23,B,No
+8,231446,Adel Alejandro Merma Ccarhuarupay,Male,Adel0_mcc,8,158700,1021,47.73,4.83,6.91,59.46,B,No
+9,200826,Jaime Antonio Rodriguez Phillco,Male,jaime_smurf_XD,9,45900,1210,44.55,1.40,8.19,54.13,A,No
+10,230971,Jose Daniel Mendoza Quispe,Male,F4nk1,11,167300,810,38.18,5.09,5.48,48.75,B,No
+11,200333,Nahyely Alaniz Espinoza Colca,Female,AlanizDreams,10,28800,800,41.36,0.88,5.41,47.65,W,No
+12,231447,Rosy Aurely Montalvo Solórzano,Female,LittleProgramer4,13,264100,854,31.82,8.04,5.78,45.63,W,No
+13,235389,Steffano Ricardo Caballero Zegarra,Male,steffanoforces,12,60900,815,35.00,1.85,5.51,42.37,B,No
+14,231907,Renzo Sebastian Quispe Pinares,Male,cbada,14,58000,890,28.64,1.77,6.02,36.42,B,No
+15,200519,Jesús Gustavo Ochoa Barrios,Male,theReflexao,15,88600,1025,25.45,2.70,6.94,35.09,A,No
+16,215733,Jhon Efrain Quispe Chura,Male,zero_speed,16,130500,905,22.27,3.97,6.12,32.37,B,No
+17,222067,Aracely Fiorela Corampa Palacios,Female,dbarafiocpenglish,17,17000,800,19.09,0.52,5.41,25.02,W,No
+18,220548,Elvis Jair Casafranca Benavides,Male,elvisjcb,19,123100,800,12.73,3.75,5.41,21.89,B,No
+19,182731,Yerson Joab Chirinos Vilca,Male,STYersonH,18,16000,800,15.91,0.49,5.41,21.81,A,No
+20,204803,Milton Alexis Pachar Lipa,Male,kiyopon_,20,170800,1000,9.55,5.20,6.77,21.51,A,No
+21,224872,Luis David Medma Canlla,Male,KingD777,21,6800,800,6.36,0.21,5.41,11.98,B,No
+22,210927,Jeliel Enriquez Araburu,Male,jeffylish_369,22,20500,854,3.18,0.62,5.78,9.58,B,No
+23,200520,Angela Vanessa Reynaga Flores,Female,vaneee,25,55600,994,-6.36,1.69,6.73,2.05,W,No
+24,231894,Camila Alexandra Fernández Puente de la Vega,Female,dylanX,25,15700,800,-6.36,0.48,5.41,-0.47,W,No
+25,200518,Anghelo Alagon Fernandez,Male,anghelo_alagon,25,1600,831,-6.36,0.05,5.62,-0.69,A,No
