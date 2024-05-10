@@ -143,7 +143,7 @@ class Ranking:
             if user.semester > 5:
                 return "A"
             else:
-                return "B" 
+                return "B"
         if user.credits > self.creditsThreshold:
             return "A"
         else:
