@@ -17,3 +17,8 @@ ContestPosition = 8
 
 [Credits]
 Threshold = 110
+
+[Selection]
+CategoryA = 5
+CategoryB = 3
+CategoryW = 1

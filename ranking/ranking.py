@@ -7,6 +7,14 @@ import csv
 import configparser
 from tabulate import tabulate
 
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib.colors import LinearSegmentedColormap
+from plottable import ColumnDefinition, Table
+from plottable.formatters import decimal_to_percent
+from plottable.plots import bar
+
 class User:
     # Basic information
     id = ""
@@ -176,11 +184,11 @@ class Ranking:
         headers = ["#", "Id", "Name", "Gender", "Handle", "Category", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
         
         table = []
-        place = 1
+        index = 1
         for user in self.users:
-            row = [place, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore]
+            row = [index, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore]
             table.append(row)
-            place += 1
+            index += 1
 
         rankingTable = tabulate(table, headers=headers, tablefmt='orgtbl', floatfmt=".2f")
 
@@ -203,11 +211,11 @@ class Ranking:
         headers = ["#", "Id", "Name", "Gender", "Handle", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score", "Category", "Attend"]
 
         data = []
-        place = 1
+        index = 1
         for user in self.users:
-            row = [place, user.id, user.name, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore), user.category, "No"]
+            row = [index, user.id, user.name, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore), user.category, "No"]
             data.append(row)
-            place += 1
+            index += 1
 
         filepath = os.path.join(filepath, "ranking.csv")
         print("Writing ranking into \"{0}\" file".format(filepath))
@@ -216,6 +224,138 @@ class Ranking:
             writer.writerow(headers)
             writer.writerows(data)
         print("Ranking file completed!")
+
+    def plotGraphic(self, filepath):
+        headers = ["Id", "Name", "Gender", "Handle", "Contest", "Problems", "Rating", "Contest Score %", "Problems Score %", "Rating Score %", "Total Score", "Category"]
+        
+        data = []
+        for user in self.users:
+            shortName = user.name
+            splitName = user.name.split()
+            if len(splitName) > 4:
+                shortName = " ".join(splitName[0:3])
+
+            contestPositionScorePercent = user.contestPositionScore / self.contestPositionWeight
+            ratingSolvedProblemPercent = user.codeforcesRatingScore / self.codeforcesRatingWeight
+            codeforcesRatingScorePercent = user.ratingSolvedProblemScore / self.totalRatingSolvedProblemsWeight
+
+            row = [user.id, shortName, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, contestPositionScorePercent, ratingSolvedProblemPercent, codeforcesRatingScorePercent, user.totalScore, user.category]
+            data.append(row)
+        
+        cmap = LinearSegmentedColormap.from_list(name="bugw", colors=["#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab"], N=256)
+        fig, ax = plt.subplots(figsize=(25, 21))
+        #plt.rcParams["font.weight"] = "bold"
+        dataframe = pd.DataFrame(data, columns=headers)
+
+        table = Table(
+            dataframe,
+            cell_kw={
+                "linewidth": 0,
+                "edgecolor": "k",
+            },
+            textprops={"fontsize": 12, "ha": "center"},
+            column_definitions=[
+                ColumnDefinition(
+                    "Id",
+                    width = 0.5,
+                ),
+                ColumnDefinition(
+                    "Name",
+                    width = 3.0,
+                    textprops = {"fontweight": "bold", "ha": "left"},
+                ),
+                ColumnDefinition(
+                    "Gender",
+                    textprops = {"ha": "left"}),
+                ColumnDefinition(
+                    "Handle",
+                    width = 1.2,
+                    textprops = {"ha": "left"},
+                ),
+                ColumnDefinition(
+                    "Contest",
+                    width = 0.5,
+                    textprops = {"fontweight": "bold"},
+                ),
+                ColumnDefinition(
+                    "Problems",
+                    textprops = {"fontweight": "bold"},
+                ),
+                ColumnDefinition(
+                    "Rating",
+                    textprops = {"fontweight": "bold"},
+                ),
+                ColumnDefinition(
+                    "Contest Score %",
+                    width = 1.25,
+                    plot_fn = bar,
+                    plot_kw = {
+                        "cmap": cmap,
+                        "plot_bg_bar": True,
+                        "annotate": True,
+                        "height": 0.5,
+                        "lw": 0.5,
+                        "formatter": decimal_to_percent,
+                    },
+                ),
+                ColumnDefinition(
+                    "Problems Score %",
+                    width = 1.25,
+                    plot_fn = bar,
+                    plot_kw = {
+                        "cmap": cmap,
+                        "plot_bg_bar": True,
+                        "annotate": True,
+                        "height": 0.5,
+                        "lw": 0.5,
+                        "formatter": decimal_to_percent,
+                    },
+                ),
+                ColumnDefinition(
+                    "Rating Score %",
+                    width = 1.25,
+                    plot_fn = bar,
+                    plot_kw = {
+                        "cmap": cmap,
+                        "plot_bg_bar": True,
+                        "annotate": True,
+                        "height": 0.5,
+                        "lw": 0.5,
+                        "formatter": decimal_to_percent,
+                    },
+                ),
+                ColumnDefinition(
+                    "Total Score",
+                    formatter = "{:.2f}",
+                    textprops = {"fontweight": "bold"},
+                ),
+                ColumnDefinition(
+                    "Category",
+                    width = 0.5,
+                ),
+            ],
+        )
+
+        rowColorsCategory = {
+            "A": "#ffe7e2",
+            "B": "#feffe2",
+            "W": "#f3eefe",
+        }
+        
+        selectByCategoryA = int(self.config["Selection"]["CategoryA"])
+        selectByCategoryB = int(self.config["Selection"]["CategoryB"])
+        selectByCategoryC = int(self.config["Selection"]["CategoryW"])
+        numberSelectByCategory = {"A": selectByCategoryA, "B": selectByCategoryB, "W": selectByCategoryC}
+
+        index = 0
+        for user in self.users:
+            if numberSelectByCategory[user.category] > 0:
+                table.rows[index].set_facecolor(rowColorsCategory[user.category])
+                numberSelectByCategory[user.category] -= 1
+            index += 1
+
+        filepath = os.path.join(filepath, "ranking.png")
+        fig.savefig(filepath, facecolor=ax.get_facecolor(), dpi=200)
 
 def readConfig(filepath):
     print("Reading config from \"{0}\" file...".format(filepath))
@@ -268,7 +408,7 @@ def getUsers(config, data):
 
 def main():
     dataFilepath = sys.argv[1]
-    rankingFilepath = sys.argv[2]
+    outputFilepath = sys.argv[2]
     configFilepath = "Config"
 
     config = readConfig(configFilepath)
@@ -278,6 +418,7 @@ def main():
     ranking = Ranking(config, users)
 
     ranking.plotTable()
-    ranking.writeFile(rankingFilepath)
+    ranking.writeFile(outputFilepath)
+    ranking.plotGraphic(outputFilepath)
 
 main()
