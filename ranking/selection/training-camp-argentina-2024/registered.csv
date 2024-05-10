@@ -1,26 +1,26 @@
-﻿Id,Name,Gender,Codeforces Handle,Credits,Semester,Contest Registered,Contest Position,Join Discord,Discord,Codeforces Rating, Rating Solved Problems
-231446,Adel Alejandro Merma Ccarhuarupay,Male,Adel0_mcc,0,3,No,1,Yes,adel9639,1021,158700
-215733,Jhon Efrain Quispe Chura,Male,zero_speed,0,2,No,1,Yes,zero_speed.,905,130500
-210412,Jhamsid Romero Bernal,Male,User0286,0,7,No,1,Yes,demonicdead,1478,626100
-230971,Jose Daniel Mendoza Quispe,Male,F4nk1,0,3,No,1,Yes,fnk1,810,167300
-204321,Yishar Piero Nieto Barrientos,Male,theFixer,0,8,No,1,Yes,mazapan_p,1452,657200
-231442,Yamir Wagner Florez Vega,Male,WagnerYFV,0,3,No,1,Yes,wagnerfv,1071,259300
-200333,Nahyely Alaniz Espinoza Colca,Female,AlanizDreams,0,9,No,1,Yes,alfinthemoon,800,28800
-231894,Camila Alexandra Fernández Puente de la Vega,Female,dylanX,0,2,No,1,Yes,dylanx7645,800,15700
-211862,Etner Yury Quispe Arqque,Male,Fan_Justino,0,7,No,1,Yes,r_gorrion,1246,217700
-200519,Jesús Gustavo Ochoa Barrios,Male,theReflexao,0,9,No,1,Yes,reflexao.,1025,88600
-210927,Jeliel Enriquez Araburu,Male,jeffylish_369,0,3,No,1,Yes,jeliel4560,854,20500
-222067,Aracely Fiorela Corampa Palacios,Female,dbarafiocpenglish,0,4,No,1,Yes,fiery_seahorse_33619,800,17000
-200820,Jose Emilio Atauchi Mamani,Male,FiboEm,0,9,No,1,Yes,emilio5801,1223,587900
-200826,Jaime Antonio Rodriguez Phillco,Male,jaime_smurf_XD,0,9,No,1,Yes,uwuii,1210,45900
-231907,Renzo Sebastian Quispe Pinares,Male,cbada,0,2,No,1,Yes,cbada_34025,890,58000
-231447,Rosy Aurely Montalvo Solórzano,Female,LittleProgramer4,0,3,No,1,Yes,rosy6280,854,264100
-220548,Elvis Jair Casafranca Benavides,Male,elvisjcb,0,5,No,1,Yes,elviscb,800,123100
-200518,Anghelo Alagon Fernandez,Male,anghelo_alagon,0,9,No,1,Yes,anghelo9093,831,1600
-204807,Luis Manuel Tinoco Ccoto,Male,LuisTinoco,0,7,No,1,Yes,stoxen_,1076,147600
-204803,Milton Alexis Pachar Lipa,Male,kiyopon_,0,8,No,1,Yes,alezenin,1000,170800
-182731,Yerson Joab Chirinos Vilca,Male,STYersonH,0,10,No,1,Yes,yersonchiri_00565_70732,800,16000
-231865,Rayneld Fidel Castro Pari,Male,Ficapro,0,3,No,1,Yes,ficapro543,883,208400
-235389,Steffano Ricardo Caballero Zegarra,Male,steffanoforces,0,2,No,1,Yes,arsiuswen,815,60900
-224872,Luis David Medma Canlla,Male,KingD777,0,4,No,1,Yes,kingdavid797,800,6800
-200520,Angela Vanessa Reynaga Flores,Female,vaneee,175,9,No,1,Yes,luz_ppp,994,55600
+﻿Id,Name,Gender,Codeforces Handle,Credits,Semester,Contest Registered,Contest Position,Join Discord,Discord,Codeforces Rating, Rating Solved Problems,Vjudge User
+231446,Adel Alejandro Merma Ccarhuarupay,Male,Adel0_mcc,0,3,Yes,1,Yes,adel9639,1021,158700,Adelmer172
+215733,Jhon Efrain Quispe Chura,Male,zero_speed,0,2,Yes,1,Yes,zero_speed.,905,130500,zero_speed
+210412,Jhamsid Romero Bernal,Male,User0286,0,7,Yes,1,Yes,demonicdead,1478,626100,User0286
+230971,Jose Daniel Mendoza Quispe,Male,F4nk1,0,3,Yes,1,Yes,fnk1,810,167300,f4nk1
+204321,Yishar Piero Nieto Barrientos,Male,theFixer,0,8,Yes,1,Yes,mazapan_p,1452,657200,piero_
+231442,Yamir Wagner Florez Vega,Male,WagnerYFV,0,3,Yes,1,Yes,wagnerfv,1071,259300,WagnerFV
+200333,Nahyely Alaniz Espinoza Colca,Female,AlanizDreams,0,9,Yes,1,Yes,alfinthemoon,800,28800,alf123
+231894,Camila Alexandra Fernández Puente de la Vega,Female,dylanX,0,2,No,25,Yes,dylanx7645,800,15700,
+211862,Etner Yury Quispe Arqque,Male,Fan_Justino,0,7,Yes,1,Yes,r_gorrion,1246,217700,Gorrion
+200519,Jesús Gustavo Ochoa Barrios,Male,theReflexao,0,9,Yes,1,Yes,reflexao.,1025,88600,reflexao
+210927,Jeliel Enriquez Araburu,Male,jeffylish_369,0,3,Yes,1,Yes,jeliel4560,854,20500,jellyfish_369
+222067,Aracely Fiorela Corampa Palacios,Female,dbarafiocpenglish,0,4,Yes,1,Yes,fiery_seahorse_33619,800,17000,AracelyFiorela
+200820,Jose Emilio Atauchi Mamani,Male,FiboEm,0,9,Yes,1,Yes,emilio5801,1223,587900,FiboEm
+200826,Jaime Antonio Rodriguez Phillco,Male,jaime_smurf_XD,0,9,Yes,1,Yes,uwuii,1210,45900,kingteka2017
+231907,Renzo Sebastian Quispe Pinares,Male,cbada,0,2,Yes,1,Yes,cbada_34025,890,58000,cbada
+231447,Rosy Aurely Montalvo Solórzano,Female,LittleProgramer4,0,3,Yes,1,Yes,rosy6280,854,264100,Rosy_Montalvo
+220548,Elvis Jair Casafranca Benavides,Male,elvisjcb,0,5,Yes,1,Yes,elviscb,800,123100,elvisjcb
+200518,Anghelo Alagon Fernandez,Male,anghelo_alagon,0,9,No,25,Yes,anghelo9093,831,1600,
+204807,Luis Manuel Tinoco Ccoto,Male,LuisTinoco,0,7,Yes,1,Yes,stoxen_,1076,147600,Luis_Manuel
+204803,Milton Alexis Pachar Lipa,Male,kiyopon_,0,8,Yes,1,Yes,alezenin,1000,170800,AlexisPL
+182731,Yerson Joab Chirinos Vilca,Male,STYersonH,0,10,Yes,1,Yes,yersonchiri_00565_70732,800,16000,STYersonH
+231865,Rayneld Fidel Castro Pari,Male,Ficapro,0,3,Yes,1,Yes,ficapro543,883,208400,Ficapro
+235389,Steffano Ricardo Caballero Zegarra,Male,steffanoforces,0,2,Yes,1,Yes,arsiuswen,815,60900,steffano
+224872,Luis David Medma Canlla,Male,KingD777,0,4,Yes,1,Yes,kingdavid797,800,6800,ldavid
+200520,Angela Vanessa Reynaga Flores,Female,vaneee,175,9,Yes,1,Yes,luz_ppp,994,55600,luzzzz
