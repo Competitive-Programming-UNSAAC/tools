@@ -18,16 +18,16 @@ Selection contest was done using the [Virtual Judge](https://vjudge.net/) platfo
 - **Password**: `cpunsaac10`
 - **Participants**: `25`
 - **Problems**: `10`
-  - **A - Two Computers**: `Implementation`
-  - **B - My Nose Grows Now**: `Implementation`
+  - **A - Two Computers**: `Implementation` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1001/en.md))
+  - **B - My Nose Grows Now**: `Implementation` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1241/en.md))
   - **C - War Of The Ring**: `Data Structure`
-  - **D - Largest Rectangle**: `Data Structure`
-  - **E - Count Points In Segments**: `Binary Search`
-  - **F - Count Zeros**: `Dynamic Programming`
-  - **G - Blossom, Bubbles, and Buttercup**: `Breadth First Search`
-  - **H - Reconstruction**: `Minimum Spanning Tree`
+  - **D - Largest Rectangle**: `Data Structure`([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1083/en.md))
+  - **E - Count Points In Segments**: `Binary Search` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1088/en.md))
+  - **F - Minimum Steps**: `Dynamic Programming`
+  - **G - Blossom, Bubbles, and Buttercup**: `Breadth First Search` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1238/en.md))
+  - **H - Reconstruction**: `Minimum Spanning Tree` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1041/en.md))
   - **I - Great Magical Lamp**: `Segment Tree`
-  - **J - DNA**: `Suffix Tree`
+  - **J - DNA**: `Suffix Tree` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1224/en.md))
 
 ## Scoreboard
 
