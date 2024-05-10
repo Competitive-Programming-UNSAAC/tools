@@ -1,0 +1,9 @@
+[Column]
+Id = 1
+Name = 2
+CodeforcesHandle = 3
+Penalty = 4
+
+[Problem]
+Number = 10
+StartColumn = 5

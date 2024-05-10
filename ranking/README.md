@@ -90,7 +90,6 @@ For each of the categories mentioned above, the selection process will be as fol
 ## Document format
 
 The CSV document with the data for compute the ranking must have the following format:
-Id;Name;Contest Position;Codeforces Handle;Credits;Semester;Gender;Join Discord;Discord;Contest Registered
 
 | Id | Name | Gender | Codeforces Handle | Credits | Semester | Contest Registered | Contest Position |
 | - | - | - | - | - | - | - | - |
@@ -121,7 +120,7 @@ To run the script, it is necessary the path to the CSV document that is sent thr
 In this sense, the command to execute the script is the following:
 
 ``` bash
-pyhton3 ranking.py [data-file-path] [ranking-file-path]
+pyhton3 ranking.py [data-file-path] [output-file-path]
 
 # Example:
 python3 ranking.py selection/training-camp-argentina-2024/registered.csv selection/training-camp-argentina-2024
