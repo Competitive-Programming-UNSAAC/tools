@@ -12,8 +12,11 @@ Name = 2
 Gender = 3
 CodeforcesHandle = 4
 Credits = 5
+Semester = 6
 ContestRegistered = 7
 ContestPosition = 8
+CodeforcesRating = 11
+TotalRatingSolvedProblems = 12
 
 [Credits]
 Threshold = 110
@@ -22,3 +25,6 @@ Threshold = 110
 CategoryA = 5
 CategoryB = 3
 CategoryW = 1
+
+[Flag]
+UseCodeforces = 0

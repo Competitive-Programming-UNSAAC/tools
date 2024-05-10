@@ -22,6 +22,7 @@ class User:
     gender = ""
     codeforcesHandle = ""
     credits = 0
+    semester = 0
     contestRegistered = ""
     contestPosition = 0
 
@@ -41,18 +42,24 @@ class User:
     ratingSolvedProblemScore = 0.0
     totalScore = 0.0
 
-    def __init__(self, id, name, gender, codeforcesHandle, credits, contestRegistered , contestPosition):
+    def __init__(self, id, name, gender, codeforcesHandle, credits, semester, contestRegistered , contestPosition, codeforcesRating, totalRatingSolvedProblems, useCodeforces):
         self.id = id
         self.name = name
         self.gender = gender
         self.codeforcesHandle = codeforcesHandle
         self.credits = int(credits)
+        self.semester = int(semester)
         self.contestRegistered = contestRegistered
         self.contestPosition = int(contestPosition)
 
         print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.codeforcesHandle))
-        self.getCodeforcesRating()
-        self.getTotalRatingSolvedProblems()
+        if not useCodeforces:
+            self.codeforcesRating = int(codeforcesRating)
+            self.totalRatingSolvedProblems = int(totalRatingSolvedProblems)
+        else:
+            self.getCodeforcesRating()
+            self.getTotalRatingSolvedProblems()
+
         self.isRegisteredOnContest()
         print("Loading basic information for \"{0}\"".format(self.name))
 
@@ -132,6 +139,11 @@ class Ranking:
     def getUserCategory(self, user):
         if user.gender == "Female":
             return "W"
+        if user.credits == 0:
+            if user.semester > 5:
+                return "A"
+            else:
+                return "B" 
         if user.credits > self.creditsThreshold:
             return "A"
         else:
@@ -236,16 +248,22 @@ class Ranking:
                 shortName = " ".join(splitName[0:3])
 
             contestPositionScorePercent = user.contestPositionScore / self.contestPositionWeight
-            ratingSolvedProblemPercent = user.codeforcesRatingScore / self.codeforcesRatingWeight
-            codeforcesRatingScorePercent = user.ratingSolvedProblemScore / self.totalRatingSolvedProblemsWeight
+            codeforcesRatingScorePercent = user.codeforcesRatingScore / self.codeforcesRatingWeight
+            ratingSolvedProblemPercent = user.ratingSolvedProblemScore / self.totalRatingSolvedProblemsWeight
 
             row = [user.id, shortName, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, contestPositionScorePercent, ratingSolvedProblemPercent, codeforcesRatingScorePercent, user.totalScore, user.category]
             data.append(row)
         
-        cmap = LinearSegmentedColormap.from_list(name="bugw", colors=["#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab"], N=256)
-        fig, ax = plt.subplots(figsize=(25, 21))
-        #plt.rcParams["font.weight"] = "bold"
-        dataframe = pd.DataFrame(data, columns=headers)
+        cmap = LinearSegmentedColormap.from_list(
+            name="bugw", colors=["#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab"], N=256
+        )
+
+        plt.rcParams["font.family"] = ["DejaVu Sans"]
+        plt.rcParams["savefig.bbox"] = "tight"
+
+        fig, ax = plt.subplots(figsize=(30, 22))
+
+        dataframe = pd.DataFrame(data, columns = headers)
 
         table = Table(
             dataframe,
@@ -253,7 +271,7 @@ class Ranking:
                 "linewidth": 0,
                 "edgecolor": "k",
             },
-            textprops={"fontsize": 12, "ha": "center"},
+            textprops={"fontsize": 14, "ha": "center"},
             column_definitions=[
                 ColumnDefinition(
                     "Id",
@@ -337,9 +355,9 @@ class Ranking:
         )
 
         rowColorsCategory = {
-            "A": "#ffe7e2",
-            "B": "#feffe2",
-            "W": "#f3eefe",
+            "A": "#fff9f3",
+            "B": "#fffff3",
+            "W": "#f3fff8",
         }
         
         selectByCategoryA = int(self.config["Selection"]["CategoryA"])
@@ -378,13 +396,20 @@ def readData(filepath):
     return data
 
 def getUsers(config, data):
+    useCodeforces = int(config["Flag"]["UseCodeforces"])
+
     idCol = int(config["Column"]["Id"])
     nameCol = int(config["Column"]["Name"])
     genderCol = int(config["Column"]["Gender"])
     codeforcesHandleCol = int(config["Column"]["CodeforcesHandle"])
     creditsCol = int(config["Column"]["Credits"])
+    semesterCol = int(config["Column"]["Semester"])
     contestPositionCol = int(config["Column"]["ContestPosition"])
     contestRegisteredCol = int(config["Column"]["ContestRegistered"])
+
+    if not useCodeforces:
+        codeforcesRatingCol = int(config["Column"]["CodeforcesRating"])
+        totalRatingSolvedProblemsCol = int(config["Column"]["TotalRatingSolvedProblems"])
 
     print("Loading users information...")
     users = []
@@ -394,13 +419,20 @@ def getUsers(config, data):
         gender = data.cell(row, genderCol).value
         codeforcesHandle = data.cell(row, codeforcesHandleCol).value
         credits = data.cell(row, creditsCol).value
+        semester = data.cell(row, semesterCol).value
         contestPosition = data.cell(row, contestPositionCol).value
         contestRegistered = data.cell(row, contestRegisteredCol).value
 
-        if id == None or name == None or gender == None or codeforcesHandle == None or credits == None or contestPosition == None or contestRegistered == None:
+        codeforcesRating = 0
+        totalRatingSolvedProblems = 0
+        if not useCodeforces:
+            codeforcesRating = data.cell(row, codeforcesRatingCol).value
+            totalRatingSolvedProblems = data.cell(row, totalRatingSolvedProblemsCol).value
+
+        if id == None or name == None or gender == None or codeforcesHandle == None or credits == None or semester == None or contestPosition == None or contestRegistered == None:
             continue
 
-        user = User(id, name, gender, codeforcesHandle, credits, contestRegistered, contestPosition)
+        user = User(id, name, gender, codeforcesHandle, credits, semester, contestRegistered, contestPosition, codeforcesRating, totalRatingSolvedProblems, useCodeforces)
         users.append(user)
 
     print("Loading users information is completed!")

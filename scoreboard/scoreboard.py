@@ -115,7 +115,7 @@ class Scoreboard:
                 ColumnDefinition(
                     name="Name",
                     textprops={"ha": "left", "weight": "bold"},
-                    width=4,
+                    width=4.0,
                 ),
                 ColumnDefinition(
                     name="Handle",

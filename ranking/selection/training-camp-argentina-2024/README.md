@@ -19,7 +19,7 @@ Selection contest was done using the [Virtual Judge](https://vjudge.net/) platfo
 - **Participants**: `25`
 - **Problems**: `10`
 
-## ScoreBoard
+## Scoreboard
 
 The complete final scoreboard of the contest can be consulted at [scoreboard document](../../../scoreboard/selection/training-camp-argentina-2024/scoreboard.csv) or [scoreboard image](../../../scoreboard/selection/training-camp-argentina-2024/scoreboard.png).
 
@@ -37,7 +37,6 @@ The final list of students selected by category is summarized in the following t
 
 | Rank | Id | Name | Attend | Category |
 | - | - | - | - | - |
-| | | | | |
 
 ## Next steps
 - Register for the Training Camp Argentina 2024 through the [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSdLZTFTqlv4tptvv-tZQtWJkfWPlHRk6thsUQUUmtC8Hm4lDw/viewform)
