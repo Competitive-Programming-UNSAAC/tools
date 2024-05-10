@@ -27,4 +27,4 @@ CategoryB = 3
 CategoryW = 1
 
 [Flag]
-UseCodeforces = 0
+UseCodeforces = 1
