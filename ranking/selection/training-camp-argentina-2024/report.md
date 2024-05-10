@@ -18,6 +18,16 @@ Selection contest was done using the [Virtual Judge](https://vjudge.net/) platfo
 - **Password**: `cpunsaac10`
 - **Participants**: `25`
 - **Problems**: `10`
+  - **A - Two Computers**: `Implementation`
+  - **B - My Nose Grows Now**: `Implementation`
+  - **C - War Of The Ring**: `Data Structure`
+  - **D - Largest Rectangle**: `Data Structure`
+  - **E - Count Points In Segments**: `Binary Search`
+  - **F - Count Zeros**: `Dynamic Programming`
+  - **G - Blossom, Bubbles, and Buttercup**: `Breadth First Search`
+  - **H - Reconstruction**: `Minimum Spanning Tree`
+  - **I - Great Magical Lamp**: `Segment Tree`
+  - **J - DNA**: `Suffix Tree`
 
 ## Scoreboard
 
