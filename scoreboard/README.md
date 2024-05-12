@@ -39,8 +39,8 @@ To run the script, it is necessary the path to the CSV document that is sent thr
 In this sense, the command to execute the script is the following:
 
 ``` bash
-pyhton3 scoreboard.py [data-file-path] [output-file-path]
+pyhton3 scoreboard.py [data-file-path] [output-file-path] [config-file-path]
 
 # Example:
-python3 scoreboard.py selection/training-camp-argentina-2024/scoreboard.csv selection/training-camp-argentina-2024
+python3 scoreboard.py selection/training-camp-argentina-2024/scoreboard.csv selection/training-camp-argentina-2024 Config
 ```

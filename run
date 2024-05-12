@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python3 scoreboard/scoreboard.py scoreboard/selection/training-camp-argentina-2024/scoreboard.csv scoreboard/selection/training-camp-argentina-2024 scoreboard/Config
+python3 ranking/ranking.py ranking/selection/training-camp-argentina-2024/registered.csv ranking/selection/training-camp-argentina-2024 ranking/Config

@@ -373,7 +373,9 @@ class Ranking:
             index += 1
 
         filepath = os.path.join(filepath, "ranking.png")
+        print("Generating ranking result file \"{0}\"".format(filepath))
         fig.savefig(filepath, facecolor=ax.get_facecolor(), dpi=200)
+        print("Ranking was generated!")
 
 def readConfig(filepath):
     print("Reading config from \"{0}\" file...".format(filepath))
@@ -441,7 +443,7 @@ def getUsers(config, data):
 def main():
     dataFilepath = sys.argv[1]
     outputFilepath = sys.argv[2]
-    configFilepath = "Config"
+    configFilepath = sys.argv[3]
 
     config = readConfig(configFilepath)
     data = readData(dataFilepath)

@@ -185,7 +185,9 @@ class Scoreboard:
         }
 
         filepath = os.path.join(filepath, "scoreboard.png")
+        print("Generating scoreboard result file \"{0}\"".format(filepath))
         fig.savefig(filepath, facecolor=ax.get_facecolor(), dpi=200)
+        print("Scoreboard was generated!")
 
 def readConfig(filepath):
     print("Reading config from \"{0}\" file...".format(filepath))
@@ -241,7 +243,7 @@ def getUsers(config, data):
 def main():
     dataFilepath = sys.argv[1]
     outputFilepath = sys.argv[2]
-    configFilepath = "Config"
+    configFilepath = sys.argv[3]
 
     config = readConfig(configFilepath)
     data = readData(dataFilepath)
