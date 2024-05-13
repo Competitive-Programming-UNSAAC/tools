@@ -47,17 +47,17 @@ The final list of students selected by category is summarized in the following t
 
 | Rank | Id | Name | Attend |
 | - | - | - | - |
-| 1 | 210412 | Jhamsid Romero Bernal | Yes/No? |
-| 2 | 204321 | Yishar Piero Nieto Barrientos | Yes/No? |
-| 3 | 200820 | Jose Emilio Atauchi Mamani | Yes/No? |
-| 4 | 211862 | Etner Yury Quispe Arqque | Yes/No? |
+| 1 | 210412 | Jhamsid Romero Bernal | Yes |
+| 2 | 204321 | Yishar Piero Nieto Barrientos | Yes |
+| 3 | 200820 | Jose Emilio Atauchi Mamani | Yes |
+| 4 | 211862 | Etner Yury Quispe Arqque | Yes |
 | 6 | 204807 | Luis Manuel Tinoco Ccoto | Yes/No? |
 
 | Rank | Id | Name | Attend |
 | - | - | - | - |
-| 5 | 231442 | Yamir Wagner Florez Vega | Yes/No? |
+| 5 | 231442 | Yamir Wagner Florez Vega | Yes |
 | 7 | 231865 | Rayneld Fidel Castro Pari | Yes/No? |
-| 8 | 231446 | Adel Alejandro Merma Ccarhuarupay | Yes/No?|
+| 8 | 231446 | Adel Alejandro Merma Ccarhuarupay | Yes |
 
 | Rank | Id | Name | Attend |
 | - | - | - | - |
