@@ -51,7 +51,7 @@ The final list of students selected by category is summarized in the following t
 | 2 | 204321 | Yishar Piero Nieto Barrientos | Yes |
 | 3 | 200820 | Jose Emilio Atauchi Mamani | Yes |
 | 4 | 211862 | Etner Yury Quispe Arqque | Yes |
-| 6 | 204807 | Luis Manuel Tinoco Ccoto | Yes/No? |
+| 6 | 204807 | Luis Manuel Tinoco Ccoto | Yes |
 
 | Rank | Id | Name | Attend |
 | - | - | - | - |
