@@ -56,7 +56,7 @@ The final list of students selected by category is summarized in the following t
 | Rank | Id | Name | Attend |
 | - | - | - | - |
 | 5 | 231442 | Yamir Wagner Florez Vega | Yes |
-| 7 | 231865 | Rayneld Fidel Castro Pari | Yes/No? |
+| 7 | 231865 | Rayneld Fidel Castro Pari | Yes |
 | 8 | 231446 | Adel Alejandro Merma Ccarhuarupay | Yes |
 
 | Rank | Id | Name | Attend |
