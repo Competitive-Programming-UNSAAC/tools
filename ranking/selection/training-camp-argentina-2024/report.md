@@ -61,7 +61,7 @@ The final list of students selected by category is summarized in the following t
 
 | Rank | Id | Name | Attend |
 | - | - | - | - |
-| 10 | 200333 | Nahyely Alaniz Espinoza | Yes/No? |
+| 10 | 200333 | Nahyely Alaniz Espinoza | Yes |
 
 
 ## Next steps
