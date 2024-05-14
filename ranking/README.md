@@ -20,14 +20,12 @@ ContestPositionScore_s = \left( { TotalContestTeams - ConstestPosition_s + 1 \ov
 
 If `n` students are participating in the selection. For each student `s`, this score will be the **Codeforces rating information obtained by the student in the different online contests**.
 
-The **minimum rating considered is 800**, that is, anyone who has **less than this rating by default will have 800**. 
-
 ```math
 MaximumCodeforcesRating = \max_{1 \leq s \leq n} \left( CodeforcesRating_s \right)
 ```
 
 ```math
-CodeforcesRatingScore_s = \left( { \max \left( 800, CodeforcesRating_s \right)  \over MaximumCodeforcesRating }  \right) \left( CodeforcesRatingWeight \right)
+CodeforcesRatingScore_s = \left( { CodeforcesRating_s \over MaximumCodeforcesRating }  \right) \left( CodeforcesRatingWeight \right)
 ```
 
 ### Codeforces Solved Problems Score

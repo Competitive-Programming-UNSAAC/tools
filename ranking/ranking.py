@@ -36,7 +36,7 @@ class User:
     codeforcesRating = 0
     totalRatingSolvedProblems = 0
 
-    # Compute scores
+    # Compute Percentage Of Scores %
     contestPositionScore = 0.0
     codeforcesRatingScore = 0.0
     ratingSolvedProblemScore = 0.0
@@ -74,10 +74,6 @@ class User:
 
         if 'rating' in data["result"][0].keys():
             self.codeforcesRating = data["result"][0]["rating"]
-
-        # Minimum rating is 800
-        self.codeforcesRating = max(800, self.codeforcesRating)
-
 
     def getTotalRatingSolvedProblems(self):
         link = f"https://codeforces.com/api/user.status?handle={self.codeforcesHandle}"
@@ -193,12 +189,12 @@ class Ranking:
         self.users.sort(key = lambda user : user.totalScore, reverse = True)
 
     def plotTable(self):
-        headers = ["#", "Id", "Name", "Gender", "Handle", "Category", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
+        headers = ["#", "Id", "Name", "Gender", "Credits", "Category", "Handle", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
         
         table = []
         index = 1
         for user in self.users:
-            row = [index, user.id, user.name, user.gender, user.codeforcesHandle, user.category, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore]
+            row = [index, user.id, user.name, user.gender, user.credits, user.category, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, user.contestPositionScore, user.ratingSolvedProblemScore, user.codeforcesRatingScore, user.totalScore]
             table.append(row)
             index += 1
 
@@ -220,12 +216,12 @@ class Ranking:
         print(rankingTable)
 
     def writeFile(self, filepath):
-        headers = ["#", "Id", "Name", "Gender", "Handle", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score", "Category", "Attend"]
+        headers = ["#", "Id", "Name", "Gender", "Credits", "Category", "Handle", "Contest", "Problems", "Rating", "Contest Score", "Problems Score", "Rating Score", "Total Score"]
 
         data = []
         index = 1
         for user in self.users:
-            row = [index, user.id, user.name, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore), user.category, "No"]
+            row = [index, user.id, user.name, user.gender, user.credits, user.category, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, "{0:.2f}".format(user.contestPositionScore), "{0:.2f}".format(user.ratingSolvedProblemScore), "{0:.2f}".format(user.codeforcesRatingScore), "{0:.2f}".format(user.totalScore)]
             data.append(row)
             index += 1
 
@@ -238,7 +234,11 @@ class Ranking:
         print("Ranking file completed!")
 
     def plotGraphic(self, filepath):
-        headers = ["Id", "Name", "Gender", "Handle", "Contest", "Problems", "Rating", "Contest Score %", "Problems Score %", "Rating Score %", "Total Score", "Category"]
+        contestScoreHeader = "Contest ({0}pts)".format(self.contestPositionWeight)
+        problemsScoreHeader = "Problems ({0}pts)".format(self.totalRatingSolvedProblemsWeight)
+        ratingScoreHeader = "Rating ({0}pts)".format(self.codeforcesRatingWeight)
+
+        headers = ["Id", "Name", "Gender", "Credits", "Category", "Handle", "Contest", "Problems", "Rating", contestScoreHeader, problemsScoreHeader, ratingScoreHeader, "Total Score"]
         
         data = []
         for user in self.users:
@@ -251,7 +251,7 @@ class Ranking:
             codeforcesRatingScorePercent = user.codeforcesRatingScore / self.codeforcesRatingWeight
             ratingSolvedProblemPercent = user.ratingSolvedProblemScore / self.totalRatingSolvedProblemsWeight
 
-            row = [user.id, shortName, user.gender, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, contestPositionScorePercent, ratingSolvedProblemPercent, codeforcesRatingScorePercent, user.totalScore, user.category]
+            row = [user.id, shortName, user.gender, user.credits, user.category, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, contestPositionScorePercent, ratingSolvedProblemPercent, codeforcesRatingScorePercent, user.totalScore]
             data.append(row)
         
         cmap = LinearSegmentedColormap.from_list(
@@ -261,7 +261,7 @@ class Ranking:
         plt.rcParams["font.family"] = ["DejaVu Sans"]
         plt.rcParams["savefig.bbox"] = "tight"
 
-        fig, ax = plt.subplots(figsize=(30, 22))
+        fig, ax = plt.subplots(figsize=(31, 24))
 
         dataframe = pd.DataFrame(data, columns = headers)
 
@@ -276,15 +276,30 @@ class Ranking:
                 ColumnDefinition(
                     "Id",
                     width = 0.5,
+                    group="Student Information",
                 ),
                 ColumnDefinition(
                     "Name",
-                    width = 3.0,
+                    width = 3.5,
                     textprops = {"fontweight": "bold", "ha": "left"},
+                    group="Student Information",
                 ),
                 ColumnDefinition(
                     "Gender",
-                    textprops = {"ha": "left"}),
+                    textprops = {"ha": "left"},
+                    width = 0.5,
+                    group="Student Information",
+                ),
+                ColumnDefinition(
+                    "Credits",
+                    width = 0.7,
+                    group="Student Information",
+                ),
+                ColumnDefinition(
+                    "Category",
+                    textprops = {"fontweight": "bold"},
+                    width = 0.7,
+                ),
                 ColumnDefinition(
                     "Handle",
                     width = 1.2,
@@ -292,19 +307,19 @@ class Ranking:
                 ),
                 ColumnDefinition(
                     "Contest",
-                    width = 0.5,
                     textprops = {"fontweight": "bold"},
+                    group="Metrics",
                 ),
                 ColumnDefinition(
                     "Problems",
-                    textprops = {"fontweight": "bold"},
+                    group="Metrics",
                 ),
                 ColumnDefinition(
                     "Rating",
-                    textprops = {"fontweight": "bold"},
+                    group="Metrics",
                 ),
                 ColumnDefinition(
-                    "Contest Score %",
+                    contestScoreHeader,
                     width = 1.25,
                     plot_fn = bar,
                     plot_kw = {
@@ -315,9 +330,10 @@ class Ranking:
                         "lw": 0.5,
                         "formatter": decimal_to_percent,
                     },
+                    group="Scores %",
                 ),
                 ColumnDefinition(
-                    "Problems Score %",
+                    problemsScoreHeader,
                     width = 1.25,
                     plot_fn = bar,
                     plot_kw = {
@@ -328,9 +344,10 @@ class Ranking:
                         "lw": 0.5,
                         "formatter": decimal_to_percent,
                     },
+                    group="Scores %",
                 ),
                 ColumnDefinition(
-                    "Rating Score %",
+                    ratingScoreHeader,
                     width = 1.25,
                     plot_fn = bar,
                     plot_kw = {
@@ -341,15 +358,12 @@ class Ranking:
                         "lw": 0.5,
                         "formatter": decimal_to_percent,
                     },
+                    group="Scores %",
                 ),
                 ColumnDefinition(
                     "Total Score",
                     formatter = "{:.2f}",
                     textprops = {"fontweight": "bold"},
-                ),
-                ColumnDefinition(
-                    "Category",
-                    width = 0.5,
                 ),
             ],
         )
