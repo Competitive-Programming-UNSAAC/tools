@@ -7,6 +7,14 @@ This is a student selection process for the [Training Camp Argentina 2024](https
 Students registered for the selection process through the following:
 
 - **Google Forms**: [REGISTRO PARA EL TRAINIG CAMP ARGENTINA 2024](https://docs.google.com/forms/d/1DBvFgVbH2CUVbbrm9XBCr9KXbFA4eMBG2294ybBhEmk/edit#responses)
+  - E-mail
+  - Full Name
+  - Birthdate
+  - National Identity Document (DNI/Passport)
+  - Contact (Phone Number)
+  - University Code
+  - University Semester
+  - Total Accumulated Credits
 
 For more details about the registered students, see the [registration file](registered.csv).
 
@@ -54,7 +62,7 @@ contact
 | 2 | 204321 | Yishar Piero Nieto Barrientos | 71645266 | | +51 997676613 | Yes |
 | 3 | 200820 | Jose Emilio Atauchi Mamani | 74283218 | 26/06/2003 | +51 948331962 | Yes |
 | 4 | 211862 | Etner Yury Quispe Arqque | 75386917 | 05/02/2003 | +51 941206887 | Yes |
-| 6 | 204807 | Luis Manuel Tinoco Ccoto | 77222876 | | +51 967779163 | Yes |
+| 6 | 204807 | Luis Manuel Tinoco Ccoto | 77222876 | 27/02/2003 | +51 967779163 | Yes |
 
 | Rank | Id | Name | DNI | Birthdate | Contact | Attend |
 | - | - | - | - | - | - | - |
