@@ -56,16 +56,16 @@ The final list of students selected by category is summarized in the following t
 | Rank | Id | Name | DNI | Birthdate | Contact | Attend |
 | - | - | - | - | - | - | - |
 | 1 | 210412 | Jhamsid Romero Bernal | 72200023 | 05/11/2003 | +51 914036676 | Yes |
-| 2 | 204321 | Yishar Piero Nieto Barrientos | 71645266 | | +51 997676613 | Yes |
+| 2 | 204321 | Yishar Piero Nieto Barrientos | 71645266 | 09/09/2002 | +51 997676613 | Yes |
 | 3 | 200820 | Jose Emilio Atauchi Mamani | 74283218 | 26/06/2003 | +51 948331962 | Yes |
 | 4 | 211862 | Etner Yury Quispe Arqque | 75386917 | 05/02/2003 | +51 941206887 | Yes |
 | 6 | 204807 | Luis Manuel Tinoco Ccoto | 77222876 | 27/02/2003 | +51 967779163 | Yes |
 
 | Rank | Id | Name | DNI | Birthdate | Contact | Attend |
 | - | - | - | - | - | - | - |
-| 5 | 231442 | Yamir Wagner Florez Vega | 60738622 | 08/05/2006| +51 915211833 | Yes |
+| 5 | 231442 | Yamir Wagner Florez Vega | 60738622 | 08/05/2006 | +51 915211833 | Yes |
 | 7 | 231865 | Rayneld Fidel Castro Pari | 60434260 | 24/07/2006 | +51 920755577 | Yes |
-| 8 | 231446 | Adel Alejandro Merma Ccarhuarupay | 76056219 | | +51 940347884 | Yes |
+| 8 | 231446 | Adel Alejandro Merma Ccarhuarupay | 76056219 | 17/02/2005 | +51 940347884 | Yes |
 
 | Rank | Id | Name | DNI | Birthdate | Contact | Attend |
 | - | - | - | - | - | - | - |
