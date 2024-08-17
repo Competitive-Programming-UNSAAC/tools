@@ -1,0 +1,993 @@
+[
+    {
+      "last_login_time": "2024-08-03T20:24:57-05:00",
+      "last_api_login_time": "2024-08-03T20:39:29-05:00",
+      "first_login_time": "2024-08-01T16:21:32-05:00",
+      "team": null,
+      "team_id": null,
+      "roles": [
+        "admin",
+        "balloon"
+      ],
+      "type": "admin",
+      "id": "1",
+      "username": "admin",
+      "name": "Administrator",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": null,
+      "last_api_login_time": "2024-08-02T14:11:34-05:00",
+      "first_login_time": "2024-08-01T16:29:29-05:00",
+      "team": null,
+      "team_id": null,
+      "roles": [
+        "judgehost"
+      ],
+      "type": null,
+      "id": "2",
+      "username": "judgehost",
+      "name": "User for judgedaemons",
+      "email": null,
+      "last_ip": "172.18.0.4",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:12:36-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-01T22:56:07-05:00",
+      "team": "Queencard 2.0",
+      "team_id": "14",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "14",
+      "username": "team01",
+      "name": "team01",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:14:19-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:14:19-05:00",
+      "team": "girls on fire",
+      "team_id": "15",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "15",
+      "username": "team02",
+      "name": "team02",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:13:06-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:13:06-05:00",
+      "team": "Los C#digans",
+      "team_id": "16",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "16",
+      "username": "team03",
+      "name": "team03",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:06:30-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:06:30-05:00",
+      "team": "Hidden",
+      "team_id": "18",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "18",
+      "username": "team05",
+      "name": "team05",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:07:44-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:07:44-05:00",
+      "team": "los fantasmas",
+      "team_id": "19",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "19",
+      "username": "team06",
+      "name": "team06",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:06:27-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:06:27-05:00",
+      "team": "PERUCAPIBES",
+      "team_id": "20",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "20",
+      "username": "team07",
+      "name": "team07",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:22:57-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:22:57-05:00",
+      "team": "ArBejitasDev",
+      "team_id": "21",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "21",
+      "username": "team08",
+      "name": "team08",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T10:20:57-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T10:20:57-05:00",
+      "team": "Chaskis",
+      "team_id": "22",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "22",
+      "username": "team09",
+      "name": "team09",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:06:10-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:06:10-05:00",
+      "team": "Los cuchao y un mate",
+      "team_id": "23",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "23",
+      "username": "team10",
+      "name": "team10",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T11:23:09-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:10:13-05:00",
+      "team": "Team Barney 1.2",
+      "team_id": "24",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "24",
+      "username": "team11",
+      "name": "team11",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T13:15:34-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:00-05:00",
+      "team": "LosRexbyte",
+      "team_id": "25",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "25",
+      "username": "team12",
+      "name": "team12",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:06:21-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:06:21-05:00",
+      "team": "NoName",
+      "team_id": "26",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "26",
+      "username": "team13",
+      "name": "team13",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:11:28-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:28-05:00",
+      "team": "Sin nombre",
+      "team_id": "27",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "27",
+      "username": "team14",
+      "name": "team14",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:11:27-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:27-05:00",
+      "team": "El Retumbar de Jherson",
+      "team_id": "28",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "28",
+      "username": "team15",
+      "name": "team15",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:24:15-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:24:15-05:00",
+      "team": "Catadores de C3-men",
+      "team_id": "29",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "29",
+      "username": "team16",
+      "name": "team16",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:10:33-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:10:33-05:00",
+      "team": "AJD++",
+      "team_id": "30",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "30",
+      "username": "team17",
+      "name": "team17",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:10:14-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:10:14-05:00",
+      "team": "the chamos",
+      "team_id": "31",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "31",
+      "username": "team18",
+      "name": "team18",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:05:32-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:05:32-05:00",
+      "team": "Byte Bandits",
+      "team_id": "32",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "32",
+      "username": "team19",
+      "name": "team19",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:07:29-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T07:54:31-05:00",
+      "team": "Pollitos",
+      "team_id": "33",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "33",
+      "username": "team20",
+      "name": "team20",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:08:29-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T07:56:03-05:00",
+      "team": "Leviatán",
+      "team_id": "34",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "34",
+      "username": "team21",
+      "name": "team21",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:07:02-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T07:54:43-05:00",
+      "team": "Las truchas están back :v",
+      "team_id": "35",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "35",
+      "username": "team22",
+      "name": "team22",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:07:23-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:07:23-05:00",
+      "team": "Code Avanzado",
+      "team_id": "36",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "36",
+      "username": "team23",
+      "name": "team23",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:09:55-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:09:55-05:00",
+      "team": "Python Rangers",
+      "team_id": "37",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "37",
+      "username": "team24",
+      "name": "team24",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:07:20-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:07:20-05:00",
+      "team": "Los Completos",
+      "team_id": "38",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "38",
+      "username": "team25",
+      "name": "team25",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:06:24-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:06:24-05:00",
+      "team": "codeforces",
+      "team_id": "39",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "39",
+      "username": "team26",
+      "name": "team26",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T10:03:17-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:09:25-05:00",
+      "team": "capibara capibara capibara",
+      "team_id": "40",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "40",
+      "username": "team27",
+      "name": "team27",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:08:00-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:08:00-05:00",
+      "team": "Porkysor army",
+      "team_id": "41",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "41",
+      "username": "team28",
+      "name": "team28",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:09:41-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:09:41-05:00",
+      "team": "Puntos para no ir a trica :v",
+      "team_id": "42",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "42",
+      "username": "team29",
+      "name": "team29",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T10:41:13-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:08:25-05:00",
+      "team": "El sueño ganá",
+      "team_id": "43",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "43",
+      "username": "team30",
+      "name": "team30",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:08:05-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:08:05-05:00",
+      "team": "runtime",
+      "team_id": "44",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "44",
+      "username": "team31",
+      "name": "team31",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T13:36:13-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:05:23-05:00",
+      "team": "Dos CIRILOS y un JUANITO",
+      "team_id": "45",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "45",
+      "username": "team32",
+      "name": "team32",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:09:47-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:09:47-05:00",
+      "team": "Clay",
+      "team_id": "46",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "46",
+      "username": "team33",
+      "name": "team33",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:05:08-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:05:08-05:00",
+      "team": "The +Z's",
+      "team_id": "47",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "47",
+      "username": "team34",
+      "name": "team34",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T12:02:48-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:18-05:00",
+      "team": "Pepinos' Team",
+      "team_id": "48",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "48",
+      "username": "team35",
+      "name": "team35",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:06:22-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:06:22-05:00",
+      "team": "La maldita timba",
+      "team_id": "49",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "49",
+      "username": "team36",
+      "name": "team36",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:11:41-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:41-05:00",
+      "team": "Gatitos blancos",
+      "team_id": "50",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "50",
+      "username": "team37",
+      "name": "team37",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:11:13-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:13-05:00",
+      "team": "mazapan + kiyopon_",
+      "team_id": "51",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "51",
+      "username": "team38",
+      "name": "team38",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:37:35-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:37:35-05:00",
+      "team": "LOS BYTEYARDINGANS",
+      "team_id": "52",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "52",
+      "username": "team39",
+      "name": "team39",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T13:24:23-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:11:35-05:00",
+      "team": "CJ7",
+      "team_id": "53",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "53",
+      "username": "team40",
+      "name": "team40",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:09:48-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:09:48-05:00",
+      "team": "Los Montis",
+      "team_id": "54",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "54",
+      "username": "team41",
+      "name": "team41",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T11:00:57-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:05:07-05:00",
+      "team": "Up",
+      "team_id": "55",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "55",
+      "username": "team42",
+      "name": "team42",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:10:58-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:10:58-05:00",
+      "team": "silents",
+      "team_id": "56",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "56",
+      "username": "team43",
+      "name": "team43",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:04:59-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:04:59-05:00",
+      "team": "CDABA",
+      "team_id": "57",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "57",
+      "username": "team44",
+      "name": "team44",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:56:13-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:02:42-05:00",
+      "team": "Tarserolindo",
+      "team_id": "58",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "58",
+      "username": "team45",
+      "name": "team45",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:09:53-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:09:53-05:00",
+      "team": "Olvidando Punto y Coma",
+      "team_id": "59",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "59",
+      "username": "team46",
+      "name": "team46",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T13:24:48-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:25:33-05:00",
+      "team": "Los Depuradores",
+      "team_id": "60",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "60",
+      "username": "team47",
+      "name": "team47",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:08:40-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:08:40-05:00",
+      "team": "RICK",
+      "team_id": "61",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "61",
+      "username": "team48",
+      "name": "team48",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:08:21-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:08:21-05:00",
+      "team": "Mewing S.A.",
+      "team_id": "62",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "62",
+      "username": "team49",
+      "name": "team49",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:13:12-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:13:12-05:00",
+      "team": "Angry Penguins :v",
+      "team_id": "63",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "63",
+      "username": "team50",
+      "name": "team50",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:05:06-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:05:06-05:00",
+      "team": "FLDSMDFR",
+      "team_id": "64",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "64",
+      "username": "team51",
+      "name": "team51",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:05:49-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:05:49-05:00",
+      "team": "Alone",
+      "team_id": "65",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "65",
+      "username": "team52",
+      "name": "team52",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": null,
+      "last_api_login_time": null,
+      "first_login_time": null,
+      "team": "franklinLlamocca",
+      "team_id": "66",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "66",
+      "username": "team53",
+      "name": "team53",
+      "email": null,
+      "last_ip": null,
+      "ip": null,
+      "enabled": true
+    },
+    {
+      "last_login_time": "2024-08-02T09:14:41-05:00",
+      "last_api_login_time": null,
+      "first_login_time": "2024-08-02T09:14:41-05:00",
+      "team": "Code Cusco",
+      "team_id": "67",
+      "roles": [
+        "team"
+      ],
+      "type": "team",
+      "id": "67",
+      "username": "team54",
+      "name": "team54",
+      "email": null,
+      "last_ip": "172.18.0.1",
+      "ip": null,
+      "enabled": true
+    }
+  ]
