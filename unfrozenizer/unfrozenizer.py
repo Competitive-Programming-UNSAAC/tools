@@ -70,8 +70,7 @@ def readJsonFile(filepath):
     return data
 
 def writeJsonFile(data):
-    filepath = os.path.join(metadataDir, unfrozenFile)
-    with open(filepath, 'w', encoding='utf-8') as file:
+    with open(unfrozenFile, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False)
 
 
