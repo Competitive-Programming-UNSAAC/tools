@@ -49,20 +49,36 @@ El scoreboard final completo del concurso se puede consultar en el [documento](.
 ![Tabla de puntuaciones](../../scoreboard/selectiva-icpc-2024/scoreboard.png)
 
 
-## Selección
+## Selección (Resultados preliminares para revisar)
 
 La lista final de estudiantes seleccionados para el **ICPC 2024** se resume en la siguiente tabla:
 
 | Ranking | Código | Nombre | Creditos| Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
-| 1 | 0 | a | 0 | 05/11/2003 | +0 | No |
+| 1 | 210412 | Jhamsid Romero Bernal | 145 | 05/11/2003 | +0 | No |
+| 2 | 204321 | Yishar Piero Nieto Barrientos | 163 | 09/09/2002| +0 | No |
+| 3 | 200826 | Jaime Antonio Rodriguez Phillco | 194 | 24/03/2003| +0 | No |
+| 4 | 200820 | Jose Emilio Atauchi Mamani | 206 | 26/06/2024 | +0 | No |
+| 5 | 211862 | Etner Yury Quispe Arqque | 150 | 27/02/2013 | +0 | No |
+| 6 | 0 | Justino Ferro Alvarez | 231 | 12/08/1980 | +0 | No |
+| 7 | 230971 | Jose Daniel Mendoza Quispe | 65 | 10/03/2006 | +0 | No |
+| 8 | 235389 | Steffano Ricardo Caballero Zegarra | 43 | 01/04/2005 | +0 | No |
+| 9 | 231865 | Rayneld Fidel Castro Pari | 65 | 24/07/2006 | +0 | No |
 
 
 La lista final de estudiantes seleccionados para el **IEEExtreme 2024** se resume en la siguiente tabla:
 
 | Ranking | Código | Nombre | Creditos | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
-| 1 | 0 | a | 0 | 05/11/2003 | +0 | No |
+| 10 | 211356 | Oriol Fernando Palacios Durand | 153 | 13/12/2003 | +0 | No |
+| 11 | 220548 | Elvis Jair Casafranca Benavides | 110 | 09/07/2004 | +0 | No |
+| 12 | 215733 | Jhon Efrain Quispe Chura | 39 | 20/12/2002 | +0 | No |
+| 13 | 241440 | Jose Omar Miranda Totocayo | 22 | 19/03/2007 | +0 | No |
+| 14 | 204803 | Milton Alexis Pachari Lipa | 165 | 24/04/2003 | +0 | No |
+| 15 | 231442 | Yamir Wagner Florez Vega  | 65 | 08/05/2006 | +0 | No |
+| 16 | 200333 | Nahyely Alaniz Espinoza Colca | 202 | 23/01/2002 | +0 | No |
+| 17 | 231446 | Adel Alejandro Merma Ccarhuarupay | 65 | 17/02/2005 | +0 | No |
+| 18 | 220553 | Yeferson Supa Cusipaucar| 110 | 24/08/2004 | +0 | No |
 
 
 ## Próximos pasos
