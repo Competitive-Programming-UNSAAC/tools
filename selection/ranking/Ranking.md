@@ -122,5 +122,5 @@ En este sentido, el comando para ejecutar el script es el siguiente:
 python3 ranking.py [data-filepath] [output-filepath] [config-filepath]
 
 # Ejemplo:
-python3 ranking.py resultados/registered.csv resultados Config
+python3 ranking.py training-camp-argentina-2024/registered.csv training-camp-argentina-2024 Config
 ```
