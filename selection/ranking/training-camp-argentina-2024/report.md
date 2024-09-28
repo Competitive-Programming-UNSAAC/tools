@@ -54,7 +54,7 @@ La información completa del ranking generada por el script para la selección d
 
 La lista final de estudiantes seleccionados por categoría se resume en la siguiente tabla:
 
-| Rango | Id | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
+| Ranking | Código | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
 | 1 | 210412 | Jhamsid Romero Bernal | 72200023 | 05/11/2003 | +51 914036676 | Sí |
 | 2 | 204321 | Yishar Piero Nieto Barrientos | 71645266 | 09/09/2002 | +51 997676613 | Sí |
@@ -62,13 +62,13 @@ La lista final de estudiantes seleccionados por categoría se resume en la sigui
 | 4 | 211862 | Etner Yury Quispe Arqque | 75386917 | 05/02/2003 | +51 941206887 | Sí |
 | 6 | 204807 | Luis Manuel Tinoco Ccoto | 77222876 | 27/02/2003 | +51 967779163 | Sí |
 
-| Rango | Id | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
+| Ranking | Código | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
 | 5 | 231442 | Yamir Wagner Florez Vega | 60738622 | 08/05/2006 | +51 915211833 | Sí |
 | 7 | 231865 | Rayneld Fidel Castro Pari | 60434260 | 24/07/2006 | +51 920755577 | Sí |
 | 8 | 231446 | Adel Alejandro Merma Ccarhuarupay | 76056219 | 17/02/2005 | +51 940347884 | Sí |
 
-| Rango | Id | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
+| Ranking | Código | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
 | 10 | 200333 | Nahyely Alaniz Espinoza | 74167832| 23/01/2002 | +51 913200887 | Sí |
 

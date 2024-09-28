@@ -1,6 +1,6 @@
 # Selectiva ICPC e IEEExtreme 2024
 
-Este es un proceso interno de selección de estudiantes para el [The 2024 ICPC South America/South Finals](https://icpc.global/regionals/finder/SouthAmerica-South) que se llevará a cabo el `09 de Noviembre`.
+Este es un proceso interno de selección de estudiantes para el [The 2024 ICPC South America/South Finals](https://icpc.global/regionals/finder/SouthAmerica-South) y el [IEEEXtreme 18.0](https://ieeextreme.org/) que se llevará a cabo el `09 de Noviembre` y el `26 de Octubre`.
 
 ## Registro
 
@@ -27,7 +27,7 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 - **Contraseña**: `*******`
 - **Duración**: `5 horas`
 - **Participantes**: `22`
-- **Problemas**: `13`
+- **Problemas**: `**`
   
 
 ## Scoreboard
@@ -41,14 +41,14 @@ El scoreboard final completo del concurso se puede consultar en el [documento](.
 
 La lista final de estudiantes seleccionados para el **ICPC 2024** se resume en la siguiente tabla:
 
-| Rango | Id | Nombre | Creditos| Fecha de Nacimiento | Contacto | Asistencia |
+| Ranking | Código | Nombre | Creditos| Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
 | 1 | 0 | a | 0 | 05/11/2003 | +0 | No |
 
 
 La lista final de estudiantes seleccionados para el **IEEExtreme 2024** se resume en la siguiente tabla:
 
-| Rango | Id | Nombre | Creditos | Fecha de Nacimiento | Contacto | Asistencia |
+| Ranking | Código | Nombre | Creditos | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
 | 1 | 0 | a | 0 | 05/11/2003 | +0 | No |
 
