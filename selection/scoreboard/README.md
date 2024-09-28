@@ -1,46 +1,46 @@
-## Compute Scoreboard
+## Scoreboard
 
-This script compute the **contest scoreboard** using CSV file
+Este script muestra el **scoreboard** a partir de un archivo CSV
 
-## Document format
+## Formato del documento
 
-The CSV document with the data for compute the scoreboard must have the following format:
+El documento CSV con los datos para el scoreboard debe tener el siguiente formato:
 
-- `1` : Solved Problem
-- `-1` : Failed attempt
-- `0` : Unsolved Problem
+- `1` : Problema resuelto
+- `-1` : Intento fallido
+- `0` : Problema no resuelto
 
-| Id | Name | Codeforces Handle | Penalty | A | B | C |
+| Id | Nombre | Usuario de Codeforces | Penalización | A | B | C |
 | - | - | - | - | - | - | - |
 | 204321 | Yishar Piero Nieto Barrientos | theFixer | 26 | 1 | 1 | 1 |
 | 231447 | Rosy Aurely Montalvo Solórzano | LittleProgramer4 | 28 | 1 | 1 | -1 |
 | 215733 | Jhon Efrain Quispe Chura | zero_speed | 30 | 1 | -1 | 0 |
 
-## Configuration File
+## Archivo de configuración
 
-`Config` file contains information about:
+El archivo `Config` contiene información sobre:
 
-- Document columns format
-- Document column problems
-- Number of problems
+- Formato de las columnas del documento
+- Columnas de problemas del documento
+- Número de problemas
 
-## Install dependencies
+## Instalar dependencias
 
-Install dependencies from the `requirements.txt` file with the following command:
+Instale las dependencias del archivo `requirements.txt` con el siguiente comando:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Command to run
+## Ejecutar script
 
-To run the script, it is necessary the path to the CSV document that is sent through the `filepah` parameter.
+Para ejecutar el script, es necesario la ruta al documento CSV que se envía a través de los parámetros.
 
-In this sense, the command to execute the script is the following:
+En este sentido, el comando para ejecutar el script es el siguiente:
 
 ``` bash
-pyhton3 scoreboard.py [data-file-path] [output-file-path] [config-file-path]
+pyhton3 scoreboard.py [data-filepath] [output-filepath] [config-filepath]
 
-# Example:
-python3 scoreboard.py selection/training-camp-argentina-2024/scoreboard.csv selection/training-camp-argentina-2024 Config
+# Ejemplo:
+python3 scoreboard.py training-camp-argentina-2024/scoreboard.csv training-camp-argentina-2024 Config
 ```
