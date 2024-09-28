@@ -25,15 +25,16 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 
 - **Concurso**: [2024 - UNSAAC Selectiva ICPC](https://vjudge.net/contest/658734)
 - **Contraseña**: `*******`
+- **Duración**: `5 horas`
 - **Participantes**: `22`
 - **Problemas**: `13`
   
 
 ## Scoreboard
 
-El scoreboard final completo del concurso se puede consultar en el [documento](../../../scoreboard/selectiva-icpc-2024/scoreboard.csv) o en la [imagen](../../../scoreboard/selectiva-icpc-2024/scoreboard.png).
+El scoreboard final completo del concurso se puede consultar en el [documento](../../scoreboard/selectiva-icpc-2024/scoreboard.csv) o en la [imagen](../../scoreboard/selectiva-icpc-2024/scoreboard.png).
 
-![Tabla de puntuaciones](../../../scoreboard/selectiva-icpc-2024/scoreboard.png)
+![Tabla de puntuaciones](../../scoreboard/selectiva-icpc-2024/scoreboard.png)
 
 
 ## Selección

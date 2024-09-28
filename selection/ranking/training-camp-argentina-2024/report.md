@@ -24,6 +24,7 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 
 - **Concurso**: [Training Camp Selection 2024 - UNSAAC](https://vjudge.net/contest/627547)
 - **Contraseña**: `cpunsaac10`
+- **Duración**: `2 horas`
 - **Participantes**: `25`
 - **Problemas**: `10`
   - **A - Two Computers**: `Implementación` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1001/en.md))
