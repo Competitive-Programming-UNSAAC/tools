@@ -1,6 +1,6 @@
 # Training Camp Argentina 2025
 
-Este es un proceso de selección de estudiantes para el [Training Camp Argentina 2025](https://www.pc-arg.com/tc-arg/more_info) que se llevará a cabo en la `Universidad Tecnológica Nacional Santa Fé` en la ciudad de `Santa Fé, Provincia de Santa Fe` del `007 al 18 de Julio`.
+Este es un proceso de selección de estudiantes para el [Training Camp Argentina 2025](https://www.pc-arg.com/tc-arg/more_info) que se llevará a cabo en la `Universidad Tecnológica Nacional Santa Fé` en la ciudad de `Santa Fé, Provincia de Santa Fe` del `07 al 18 de Julio`.
 
 ## Registro
 
@@ -30,7 +30,7 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
   - **[B - Freezer](https://www.spoj.com/problems/RPLD/en/)**
   - **[C - Goku](https://cses.fi/problemset/task/2402)**
   - **[D - Maestro Roshi](https://cses.fi/problemset/task/3312)**
-  - **[E - Bulma](hhttps://cses.fi/problemset/task/1706)**
+  - **[E - Bulma](https://cses.fi/problemset/task/1706)**
   - **[F - Cell](https://codeforces.com/problemset/problem/227/A)**
   - **[G - Vegeta](https://codeforces.com/gym/102694/problem/C)**
   - **[H - Krilin](https://codeforces.com/gym/101962/problem/B)**
