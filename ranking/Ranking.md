@@ -58,7 +58,7 @@ Para cada estudiante `s`, la cantidad total de puntos es:
 PuntajeTotal_s = PuntajePosiciónConcurso_s + PuntajeRatingCodeforces_s + PuntajeRatingProblemasResueltos_s
 ```
 
-### Reglas de Selección
+### Reglas de Selección [Minimo de 2 Problemas Resueltos]
 
 Teniendo esto en cuenta, **habrá N cupos disponibles** y se llenarán de la siguiente manera:
 
@@ -93,7 +93,7 @@ Para cada estudiante `s`, la cantidad total de puntos es:
 PuntajeTotal_s = PuntajePosiciónConcurso_s + PuntajeRatingProblemasResueltos_s
 ```
 
-### Reglas de Selección
+### Reglas de Selección [Minimo de 2 Problemas Resueltos]
 
 Teniendo esto en cuenta, **habrá N cupos disponibles** y se llenarán de la siguiente manera:
 

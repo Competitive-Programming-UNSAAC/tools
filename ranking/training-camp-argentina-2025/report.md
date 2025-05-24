@@ -49,17 +49,18 @@ La información completa del ranking generada por el script para la selección d
 
 ![Imagen de ranking](ranking.png)
 
-## Selección
+## Selección [EN PROGRESO]
 
-La lista final de estudiantes seleccionados por categoría se resume en la siguiente tabla:
+La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 
 | Ranking | Código | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
-| 1 | 210412 | Jhamsid Romero Bernal |  |  | | Pendiente |
+| 1 | 231865 | Rayneld Fidel Castro Pari |  |  | | Pendiente |
 | 2 | 204321 | Yishar Piero Nieto Barrientos |  |  |  | Pendiente |
-| 3 | 200820 | Jose Emilio Atauchi Mamani |  |  |  | Pendiente |
-| 4 | 211862 | Etner Yury Quispe Arqque |  |  |  | Pendiente |
-| 6 | 204807 | Luis Manuel Tinoco Ccoto |  |  |  | Pendiente |
+| 3 | 215733 | Jhon Efrain Quispe Chura |  |  |  | Pendiente |
+| 4 | 235389 | Steffano Ricardo Caballero Zegarra |  |  |  | Pendiente |
+| 5 | 240447 | Oscar Alex Quispe Chura |  |  |  | Pendiente |
+| 6 | 230971 | Jose Daniel Mendoza Quispe |  |  |  | Pendiente |
 
 ## Próximos pasos
 - Registrarse para el Training Camp Argentina 2025 a través del [Formulario de Google](https://docs.google.com/forms/d/e/1FAIpQLSdLZTFTqlv4tptvv-tZQtWJkfWPlHRk6thsUQUUmtC8Hm4lDw/viewform)
