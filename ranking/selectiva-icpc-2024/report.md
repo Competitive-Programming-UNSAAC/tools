@@ -86,6 +86,7 @@ La lista final de estudiantes seleccionados para el **IEEExtreme 2024** se resum
 | 17 | 231446 | Adel Alejandro Merma Ccarhuarupay | 65 | 17/02/2005 | +0 | No |
 | 18 | 220553 | Yeferson Supa Cusipaucar| 110 | 24/08/2004 | +0 | No |
 
+Consultar las [Reglas de Selección](../Ranking.md#reglas-de-selección-minimo-de-2-problemas-resueltos-1) antes de aceptar la asistencia al evento!
 
 ## Próximos pasos
 
