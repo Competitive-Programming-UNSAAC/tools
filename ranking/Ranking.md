@@ -113,7 +113,7 @@ Para la selección, los estudiantes deben tener en cuenta los siguientes `requis
 
 3. En caso de que el estudiante tenga apoyo financiero de la universidad, **al regresar, el estudiante debe reportar a la universidad los gastos incurridos**.
 
-4. En caso de que el estudiante tenga apoyo financiero de la universidad, **al regresar, el estudiante debe participar de los eventos de programación competitiva y contribuir con su conocimiento obtenido para los otros estudiantes i.e (clases, contests, eventos)**.
+4. En caso de que el estudiante tenga apoyo financiero de la universidad, **al regresar, el estudiante debe participar de los eventos de programación competitiva y contribuir con su conocimiento obtenido para los otros estudiantes i.e (clases, contests, eventos). Estudiantes egresados con 200 creditos o más no son elegibles ya que poseen poco tiempo libre.**.
 
 ## Formato del documento
 

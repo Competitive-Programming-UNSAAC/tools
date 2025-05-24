@@ -25,16 +25,18 @@ class User:
     codeforcesHandle = ""
     penalty = 0
     problems = []
+    attemps = 0
 
     # Compute
     totalSolvedProblems = 0
 
-    def __init__(self, id, name, codeforcesHandle, penalty , problems):
+    def __init__(self, id, name, codeforcesHandle, penalty , problems, attemps):
         self.id = id
         self.name = name
         self.codeforcesHandle = codeforcesHandle
         self.penalty = int(penalty)
         self.problems = problems
+        self.attemps = attemps
         # Compute total solved problems
         self.getTotalSolvedproblems()
 
@@ -55,7 +57,7 @@ class Scoreboard:
         self.totalUsers = len(users)
         self.totalProblems = int(config["Problem"]["Number"])
         # Sort ranking by total solved problems and penalty
-        self.users.sort(key=lambda user:(user.totalSolvedProblems, -user.penalty), reverse = True)
+        self.users.sort(key=lambda user:(user.totalSolvedProblems, -user.penalty, user.attemps), reverse = True)
 
     def plotGraphic(self, filepath):
         data = []
@@ -230,11 +232,13 @@ def getUsers(config, data):
             continue
 
         problems = []
+        attemps = 0
         for problemCol in range(startColumnProblemCol, startColumnProblemCol + numberProblemCol):
             problemResult = data.cell(row, problemCol).value
             problems.append(int(problemResult))
+            attemps += abs(int(problemResult))
 
-        user = User(id, name, codeforcesHandle, penalty, problems)
+        user = User(id, name, codeforcesHandle, penalty, problems, attemps)
         users.append(user)
 
     print("Loading users information is completed!")

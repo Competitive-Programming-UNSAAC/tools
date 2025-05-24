@@ -66,6 +66,11 @@ class User:
         if self.contestRegistered == "Yes":
             self.isRegisteredOnContest = True
 
+    def isQualify(self, creditsQualifyThreshold):
+        if self.credits == 0 or self.credits >= creditsQualifyThreshold:
+            return False
+        return True
+
     def getCodeforcesRating(self):
         link = f"https://codeforces.com/api/user.info?handles={self.codeforcesHandle}"
         url = requests.get(link)
@@ -113,7 +118,8 @@ class Ranking:
     totalRegisteredTeams = 0
     totalContestTeams = 0
 
-    creditsThreshold = 0
+    creditsCategoryThreshold = 0
+    creditsQualifyThreshold = 0
 
     codeforcesRatingAverage = 0.0
     totalRatingSolvedProblemsAverage = 0.0
@@ -134,6 +140,8 @@ class Ranking:
         print("Completed computing the ranking!")
 
     def getUserCategory(self, user):
+        if not user.isQualify(self.creditsQualifyThreshold):
+            return "-"
         if self.rankingType == "Unique":
             return "U"
         else:
@@ -144,7 +152,7 @@ class Ranking:
                     return "A"
                 else:
                     return "B"
-            if user.credits > self.creditsThreshold:
+            if user.credits >= self.creditsCategoryThreshold:
                 return "A"
             else:
                 return "B"
@@ -163,7 +171,8 @@ class Ranking:
         self.contestPositionWeight = int(self.config["Weight"]["ContestPosition"])
         self.codeforcesRatingWeight = int(self.config["Weight"]["CodeforcesRating"])
         self.totalRatingSolvedProblemsWeight = int(self.config["Weight"]["TotalRatingSolvedProblems"])
-        self.creditsThreshold = int(self.config["Credits"]["Threshold"])
+        self.creditsCategoryThreshold = int(self.config["Credits"]["CategoryThreshold"])
+        self.creditsQualifyThreshold = int(self.config["Credits"]["QualifyThreshold"])
         self.rankingType = self.config["Ranking"]["Type"]
 
         totalCodeforcesRatingAccumulate = 0
@@ -383,12 +392,12 @@ class Ranking:
         numberSelectByCategory = {}
         if self.rankingType == "Unique":
             selectByCategoryU = int(self.config["Unique"]["U"])
-            numberSelectByCategory = {"U": selectByCategoryU}
+            numberSelectByCategory = {"U": selectByCategoryU, "-": 0}
         else:
             selectByCategoryA = int(self.config["Category"]["A"])
             selectByCategoryB = int(self.config["Category"]["B"])
             selectByCategoryC = int(self.config["Category"]["W"])
-            numberSelectByCategory = {"A": selectByCategoryA, "B": selectByCategoryB, "W": selectByCategoryC}
+            numberSelectByCategory = {"A": selectByCategoryA, "B": selectByCategoryB, "W": selectByCategoryC, "-": 0}
 
         index = 0
         for user in self.users:
