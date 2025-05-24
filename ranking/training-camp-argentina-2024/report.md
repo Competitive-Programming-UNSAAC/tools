@@ -27,16 +27,16 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 - **Duración**: `2 horas`
 - **Participantes**: `25`
 - **Problemas**: `10`
-  - **A - Two Computers**: `Implementación` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1001/en.md))
-  - **B - My Nose Grows Now**: `Implementación` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1241/en.md))
-  - **C - War Of The Ring**: `Estructura de Datos`
-  - **D - Largest Rectangle**: `Estructura de Datos`([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1083/en.md))
-  - **E - Count Points In Segments**: `Búsqueda Binaria` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1088/en.md))
-  - **F - Minimum Steps**: `Programación Dinámica`
-  - **G - Blossom, Bubbles, and Buttercup**: `Búsqueda en Amplitud` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1238/en.md))
-  - **H - Reconstruction**: `Árbol de Expansión Mínima` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1041/en.md))
-  - **I - Great Magical Lamp**: `Árbol de Segmentos`
-  - **J - DNA**: `Árbol de Sufijos` ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1224/en.md))
+  - **[A - Two Computers](https://lightoj.com/problem/opposite-task)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1001/en.md))
+  - **[B - My Nose Grows Now](https://lightoj.com/problem/pinocchio)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1241/en.md))
+  - **[C - War Of The Ring](https://lightoj.com/problem/restoring-middle-earth)**
+  - **[D - Largest Rectangle](https://lightoj.com/problem/histogram)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1083/en.md))
+  - **[E - Count Points In Segments](https://lightoj.com/problem/points-in-segments)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1088/en.md))
+  - **[F - Minimum Steps](https://lightoj.com/problem/collecting-gold)**
+  - **[G - Blossom, Bubbles, and Buttercup](https://lightoj.com/problem/power-puff-girls)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1238/en.md))
+  - **[H - Reconstruction](https://lightoj.com/problem/road-construction)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1041/en.md))
+  - **[I - Great Magical Lamp](https://lightoj.com/problem/aladdin-and-the-return-journe)**
+  - **[J - DNA](https://lightoj.com/problem/dna-prefix)** ([editorial](https://github.com/lightoj-dev/problem-tutorials/blob/main/1224/en.md))
 
 ## Scoreboard
 

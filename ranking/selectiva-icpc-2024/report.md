@@ -28,19 +28,19 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 - **Duración**: `5 horas`
 - **Participantes**: `22`
 - **Problemas**: `13`
-  - [A - Max Min](https://atcoder.jp/contests/abc262/tasks/abc262_c)
-  - [B - WozMit Hates Sigma Problems](https://atcoder.jp/contests/abc371/tasks/abc371_e)
-  - [C - AtCoder Big Contest](https://atcoder.jp/contests/abc285/tasks/abc285_c)
-  - [D - K Swaps](https://atcoder.jp/contests/abc254/tasks/abc254_c)
-  - [E - Kleiber's Summer Street Parade](https://www.spoj.com/problems/STPAR/en/)
-  - [F - Segment GCD](https://codeforces.com/problemset/problem/914/D)
-  - [G - Chemistry Test](https://codeforces.com/problemset/problem/445/B)
-  - [H - This is CFT not FFT](https://codeforces.com/problemset/problem/1152/B)
-  - [I - Lazy Student](https://codeforces.com/problemset/problem/369/A)
-  - [J - Transform String](https://atcoder.jp/contests/abc259/tasks/abc259_c)
-  - [K - Twidai Network](https://atcoder.jp/contests/abc278/tasks/abc278_c)
-  - [L - Famous Drink](https://codeforces.com/problemset/problem/706/B)
-  - [M - Change Usernames](https://atcoder.jp/contests/abc285/tasks/abc285_d)
+  - **[A - Max Min](https://atcoder.jp/contests/abc262/tasks/abc262_c)**
+  - **[B - WozMit Hates Sigma Problems](https://atcoder.jp/contests/abc371/tasks/abc371_e)**
+  - **[C - AtCoder Big Contest](https://atcoder.jp/contests/abc285/tasks/abc285_c)**
+  - **[D - K Swaps](https://atcoder.jp/contests/abc254/tasks/abc254_c)**
+  - **[E - Kleiber's Summer Street Parade](https://www.spoj.com/problems/STPAR/en/)**
+  - **[F - Segment GCD](https://codeforces.com/problemset/problem/914/D)**
+  - **[G - Chemistry Test](https://codeforces.com/problemset/problem/445/B)**
+  - **[H - This is CFT not FFT](https://codeforces.com/problemset/problem/1152/B)**
+  - **[I - Lazy Student](https://codeforces.com/problemset/problem/369/A)**
+  - **[J - Transform String](https://atcoder.jp/contests/abc259/tasks/abc259_c)**
+  - **[K - Twidai Network](https://atcoder.jp/contests/abc278/tasks/abc278_c)**
+  - **[L - Famous Drink](https://codeforces.com/problemset/problem/706/B)**
+  - **[M - Change Usernames](https://atcoder.jp/contests/abc285/tasks/abc285_d)**
 
 ## Scoreboard
 
