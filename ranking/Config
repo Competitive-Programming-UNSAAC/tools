@@ -3,8 +3,8 @@ TotalRegisteredTeams = 22
 
 [Weight]
 CodeforcesRating = 0
-TotalRatingSolvedProblems = 10
-ContestPosition = 90
+TotalRatingSolvedProblems = 0
+ContestPosition = 100
 
 [Column]
 Id = 1

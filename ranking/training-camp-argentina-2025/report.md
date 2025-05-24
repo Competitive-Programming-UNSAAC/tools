@@ -24,7 +24,7 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 - **Concurso**: [2025 - Selectiva Training Camp Argentina](https://vjudge.net/contest/715074)
 - **Contraseña**: `cpunsaac10`
 - **Duración**: `3 horas`
-- **Participantes**: `26`
+- **Participantes**: `25`
 - **Problemas**: `10`
   - **[A - Piccoro](https://cses.fi/problemset/task/1641)**
   - **[B - Freezer](https://www.spoj.com/problems/RPLD/en/)**
