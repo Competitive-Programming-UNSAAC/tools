@@ -1,6 +1,6 @@
 # Training Camp Argentina 2025
 
-Este es un proceso de selección de estudiantes para el [Training Camp Argentina 2025](https://www.pc-arg.com/tc-arg/more_info) que se llevará a cabo en la `Universidad Tecnológica Nacional Santa Fé` en la ciudad de `Santa Fé, Provincia de Santa Fe` del `07 al 18 de Julio`.
+Este es un proceso de selección de estudiantes para el [Training Camp Argentina 2025](https://icpc.com.ar/tc/) que se llevará a cabo en la `Universidad Tecnológica Nacional Santa Fé` en la ciudad de `Santa Fé, Provincia de Santa Fe` del `07 al 18 de Julio`.
 
 ## Registro
 
@@ -65,7 +65,7 @@ La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 Consultar las [Compromiso y Requisitos de Selección](../Ranking.md#compromiso-y-requisitos-de-selección) antes de aceptar la asistencia al evento!
 
 ## Próximos pasos
-- Registrarse para el Training Camp Argentina 2025 a través del [Formulario de Google](https://docs.google.com/forms/d/e/1FAIpQLSdLZTFTqlv4tptvv-tZQtWJkfWPlHRk6thsUQUUmtC8Hm4lDw/viewform)
+- Registrarse para el Training Camp Argentina 2025 a través del [Formulario de Google](https://docs.google.com/forms/d/e/1FAIpQLSfj7Xf1cIOUu27jwnutS_pSsa2cYK0E05FIBymBXhYzh7CyTA/viewform)
   - Confirmar asistencia
   - Solicitar carta de invitación
 
