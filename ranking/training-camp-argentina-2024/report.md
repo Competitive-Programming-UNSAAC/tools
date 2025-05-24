@@ -40,9 +40,9 @@ El concurso de selección se realizó utilizando la plataforma [Virtual Judge](h
 
 ## Scoreboard
 
-El scoreboard final completo del concurso se puede consultar en el [documento](../../../scoreboard/training-camp-argentina-2024/scoreboard.csv) o en la [imagen](../../../scoreboard/training-camp-argentina-2024/scoreboard.png).
+El scoreboard final completo del concurso se puede consultar en el [documento](../../scoreboard/training-camp-argentina-2024/scoreboard.csv) o en la [imagen](../../scoreboard/training-camp-argentina-2024/scoreboard.png).
 
-![Tabla de puntuaciones](../../../scoreboard/training-camp-argentina-2024/scoreboard.png)
+![Tabla de puntuaciones](../../scoreboard/training-camp-argentina-2024/scoreboard.png)
 
 ## Ranking
 
