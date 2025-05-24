@@ -42,7 +42,7 @@ class User:
     ratingSolvedProblemScore = 0.0
     totalScore = 0.0
 
-    def __init__(self, id, name, gender, codeforcesHandle, credits, semester, contestRegistered , contestPosition, codeforcesRating, totalRatingSolvedProblems, useCodeforces):
+    def __init__(self, id, name, gender, codeforcesHandle, credits, semester, contestRegistered , contestPosition):
         self.id = id
         self.name = name
         self.gender = gender
@@ -52,11 +52,10 @@ class User:
         self.contestRegistered = contestRegistered
         self.contestPosition = int(contestPosition)
 
-        print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.codeforcesHandle))
-        if not useCodeforces:
-            self.codeforcesRating = int(codeforcesRating)
-            self.totalRatingSolvedProblems = int(totalRatingSolvedProblems)
+        if not self.codeforcesHandle:
+             print('Not Codeforces handle for \"{0}\"'.format(self.name))
         else:
+            print('Loading Codeforces info for \"{0}\" with handle \"{1}\"'.format(self.name, self.codeforcesHandle))
             self.getCodeforcesRating()
             self.getTotalRatingSolvedProblems()
 
@@ -108,6 +107,8 @@ class Ranking:
     config = {}
     users = []
 
+    rankingType = ""
+
     totalUsers = 0
     totalRegisteredTeams = 0
     totalContestTeams = 0
@@ -133,17 +134,20 @@ class Ranking:
         print("Completed computing the ranking!")
 
     def getUserCategory(self, user):
-        if user.gender == "Female":
-            return "W"
-        if user.credits == 0:
-            if user.semester > 5:
+        if self.rankingType == "Unique":
+            return "U"
+        else:
+            if user.gender == "Female":
+                return "W"
+            if user.credits == 0:
+                if user.semester > 5:
+                    return "A"
+                else:
+                    return "B"
+            if user.credits > self.creditsThreshold:
                 return "A"
             else:
                 return "B"
-        if user.credits > self.creditsThreshold:
-            return "A"
-        else:
-            return "B"
 
     def getContestPositionScore(self, user):
         return (self.totalContestTeams - user.contestPosition + 1) * self.contestPositionWeight / self.totalContestTeams
@@ -160,6 +164,7 @@ class Ranking:
         self.codeforcesRatingWeight = int(self.config["Weight"]["CodeforcesRating"])
         self.totalRatingSolvedProblemsWeight = int(self.config["Weight"]["TotalRatingSolvedProblems"])
         self.creditsThreshold = int(self.config["Credits"]["Threshold"])
+        self.rankingType = self.config["Ranking"]["Type"]
 
         totalCodeforcesRatingAccumulate = 0
         totalRatingSolvedProblemAccumulate = 0
@@ -247,9 +252,9 @@ class Ranking:
             if len(splitName) > 4:
                 shortName = " ".join(splitName[0:3])
 
-            contestPositionScorePercent = user.contestPositionScore / self.contestPositionWeight
-            codeforcesRatingScorePercent = user.codeforcesRatingScore / self.codeforcesRatingWeight
-            ratingSolvedProblemPercent = user.ratingSolvedProblemScore / self.totalRatingSolvedProblemsWeight
+            contestPositionScorePercent = user.contestPositionScore / self.contestPositionWeight if self.contestPositionWeight else 0
+            codeforcesRatingScorePercent = user.codeforcesRatingScore / self.codeforcesRatingWeight if self.codeforcesRatingWeight else 0
+            ratingSolvedProblemPercent = user.ratingSolvedProblemScore / self.totalRatingSolvedProblemsWeight if self.totalRatingSolvedProblemsWeight else 0
 
             row = [user.id, shortName, user.gender, user.credits, user.category, user.codeforcesHandle, user.contestPosition , user.totalRatingSolvedProblems, user.codeforcesRating, contestPositionScorePercent, ratingSolvedProblemPercent, codeforcesRatingScorePercent, user.totalScore]
             data.append(row)
@@ -369,15 +374,21 @@ class Ranking:
         )
 
         rowColorsCategory = {
+            "U": "#f3fff8",
             "A": "#fff9f3",
             "B": "#fffff3",
             "W": "#f3fff8",
         }
         
-        selectByCategoryA = int(self.config["Selection"]["CategoryA"])
-        selectByCategoryB = int(self.config["Selection"]["CategoryB"])
-        selectByCategoryC = int(self.config["Selection"]["CategoryW"])
-        numberSelectByCategory = {"A": selectByCategoryA, "B": selectByCategoryB, "W": selectByCategoryC}
+        numberSelectByCategory = {}
+        if self.rankingType == "Unique":
+            selectByCategoryU = int(self.config["Unique"]["U"])
+            numberSelectByCategory = {"U": selectByCategoryU}
+        else:
+            selectByCategoryA = int(self.config["Category"]["A"])
+            selectByCategoryB = int(self.config["Category"]["B"])
+            selectByCategoryC = int(self.config["Category"]["W"])
+            numberSelectByCategory = {"A": selectByCategoryA, "B": selectByCategoryB, "W": selectByCategoryC}
 
         index = 0
         for user in self.users:
@@ -412,8 +423,6 @@ def readData(filepath):
     return data
 
 def getUsers(config, data):
-    useCodeforces = int(config["Flag"]["UseCodeforces"])
-
     idCol = int(config["Column"]["Id"])
     nameCol = int(config["Column"]["Name"])
     genderCol = int(config["Column"]["Gender"])
@@ -422,10 +431,6 @@ def getUsers(config, data):
     semesterCol = int(config["Column"]["Semester"])
     contestPositionCol = int(config["Column"]["ContestPosition"])
     contestRegisteredCol = int(config["Column"]["ContestRegistered"])
-
-    if not useCodeforces:
-        codeforcesRatingCol = int(config["Column"]["CodeforcesRating"])
-        totalRatingSolvedProblemsCol = int(config["Column"]["TotalRatingSolvedProblems"])
 
     print("Loading users information...")
     users = []
@@ -439,16 +444,10 @@ def getUsers(config, data):
         contestPosition = data.cell(row, contestPositionCol).value
         contestRegistered = data.cell(row, contestRegisteredCol).value
 
-        codeforcesRating = 0
-        totalRatingSolvedProblems = 0
-        if not useCodeforces:
-            codeforcesRating = data.cell(row, codeforcesRatingCol).value
-            totalRatingSolvedProblems = data.cell(row, totalRatingSolvedProblemsCol).value
-
         if id == None or name == None or gender == None or codeforcesHandle == None or credits == None or semester == None or contestPosition == None or contestRegistered == None:
             continue
 
-        user = User(id, name, gender, codeforcesHandle, credits, semester, contestRegistered, contestPosition, codeforcesRating, totalRatingSolvedProblems, useCodeforces)
+        user = User(id, name, gender, codeforcesHandle, credits, semester, contestRegistered, contestPosition)
         users.append(user)
 
     print("Loading users information is completed!")

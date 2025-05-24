@@ -48,6 +48,12 @@ El scoreboard final completo del concurso se puede consultar en el [documento](.
 
 ![Tabla de puntuaciones](../../scoreboard/selectiva-icpc-2024/scoreboard.png)
 
+## Ranking
+
+La información completa del ranking generada por el script para la selección de estudiantes se puede encontrar en el [documento](ranking.csv) o en la [imagen](ranking.png).
+
+![Imagen de ranking](ranking.png)
+
 
 ## Selección (Resultados preliminares para revisar)
 

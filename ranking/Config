@@ -1,10 +1,10 @@
 [Contest]
-TotalRegisteredTeams = 25
+TotalRegisteredTeams = 22
 
 [Weight]
-CodeforcesRating = 10
-TotalRatingSolvedProblems = 20
-ContestPosition = 70
+CodeforcesRating = 0
+TotalRatingSolvedProblems = 0
+ContestPosition = 100
 
 [Column]
 Id = 1
@@ -21,10 +21,13 @@ TotalRatingSolvedProblems = 12
 [Credits]
 Threshold = 110
 
-[Selection]
-CategoryA = 5
-CategoryB = 3
-CategoryW = 1
+[Ranking]
+Type = Unique
 
-[Flag]
-UseCodeforces = 1
+[Unique]
+U = 9
+
+[Category]
+A = 5
+B = 3
+W = 1
