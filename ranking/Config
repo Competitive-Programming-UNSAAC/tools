@@ -3,8 +3,8 @@ TotalRegisteredTeams = 22
 
 [Weight]
 CodeforcesRating = 0
-TotalRatingSolvedProblems = 0
-ContestPosition = 100
+TotalRatingSolvedProblems = 10
+ContestPosition = 90
 
 [Column]
 Id = 1
@@ -17,6 +17,10 @@ ContestRegistered = 7
 ContestPosition = 8
 CodeforcesRating = 11
 TotalRatingSolvedProblems = 12
+
+[Codeforces]
+StartDate = 10/03/2025
+EndDate = 17/05/2025
 
 [Credits]
 CategoryThreshold = 110

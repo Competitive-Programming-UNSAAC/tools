@@ -15,6 +15,8 @@ from plottable import ColumnDefinition, Table
 from plottable.formatters import decimal_to_percent
 from plottable.plots import bar
 
+from datetime import datetime
+
 class User:
     # Basic information
     id = ""
@@ -32,6 +34,10 @@ class User:
     # Category
     category = ""
 
+    # Codeforces Interval
+    codeforcesStartDate = {}
+    codeforcesEndDate = {}
+
     # Codeforces information
     codeforcesRating = 0
     totalRatingSolvedProblems = 0
@@ -42,7 +48,7 @@ class User:
     ratingSolvedProblemScore = 0.0
     totalScore = 0.0
 
-    def __init__(self, id, name, gender, codeforcesHandle, credits, semester, contestRegistered , contestPosition):
+    def __init__(self, id, name, gender, codeforcesHandle, credits, semester, contestRegistered , contestPosition, codeforcesStartDate, codeforcesEndDate):
         self.id = id
         self.name = name
         self.gender = gender
@@ -51,6 +57,8 @@ class User:
         self.semester = int(semester)
         self.contestRegistered = contestRegistered
         self.contestPosition = int(contestPosition)
+        self.codeforcesStartDate = codeforcesStartDate
+        self.codeforcesEndDate = codeforcesEndDate
 
         if not self.codeforcesHandle:
              print('Not Codeforces handle for \"{0}\"'.format(self.name))
@@ -95,18 +103,28 @@ class User:
                 key += str(submissions["problem"]["contestId"])
 
             if 'index' in submissions["problem"].keys():
-                key += submissions["problem"]["index"]    
+                key += submissions["problem"]["index"]
+
+            timestamp = submissions["creationTimeSeconds"]
+            startDate = datetime.strptime(self.codeforcesStartDate, "%d/%m/%Y")
+            endDate = datetime.strptime(self.codeforcesEndDate, "%d/%m/%Y")
+
+            if not int(startDate.timestamp()) <= timestamp <= int(endDate.timestamp()):
+                continue
 
             # Accumulate problem rating avoid duplicates
             if  key not in problemSolved and submissions['verdict'] == "OK" and "rating" in submissions["problem"]:      
-                self.totalRatingSolvedProblems  += submissions["problem"]["rating"]
+                # Use Rating instead of just count
+                # self.totalRatingSolvedProblems += submissions["problem"]["rating"]
+                self.totalRatingSolvedProblems += 1
                 problemSolved[key] = True
 
             # Training contest problems have 1000 of raiting
             if  key not in problemSolved and "rating" not in submissions["problem"]:
-                self.totalRatingSolvedProblems += 1000
+                # Use Rating instead of just count
+                # self.totalRatingSolvedProblems += 1000
+                self.totalRatingSolvedProblems += 1
                 problemSolved[key] = True
-
 
 class Ranking:
     config = {}
@@ -440,6 +458,8 @@ def getUsers(config, data):
     semesterCol = int(config["Column"]["Semester"])
     contestPositionCol = int(config["Column"]["ContestPosition"])
     contestRegisteredCol = int(config["Column"]["ContestRegistered"])
+    codeforcesStartDate = config["Codeforces"]["StartDate"]
+    codeforcesEndDate = config["Codeforces"]["EndDate"]
 
     print("Loading users information...")
     users = []
@@ -456,7 +476,7 @@ def getUsers(config, data):
         if id == None or name == None or gender == None or codeforcesHandle == None or credits == None or semester == None or contestPosition == None or contestRegistered == None:
             continue
 
-        user = User(id, name, gender, codeforcesHandle, credits, semester, contestRegistered, contestPosition)
+        user = User(id, name, gender, codeforcesHandle, credits, semester, contestRegistered, contestPosition, codeforcesStartDate, codeforcesEndDate)
         users.append(user)
 
     print("Loading users information is completed!")

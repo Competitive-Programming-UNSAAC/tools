@@ -1,26 +1,26 @@
 #,Id,Name,Gender,Credits,Category,Handle,Contest,Problems,Rating,Contest Score,Problems Score,Rating Score,Total Score
-1,204321,Yishar Piero Nieto Barrientos,Male,183,U,mazapaN_,1,312100,1622,100.00,0.00,0.00,100.00
-2,231865,Rayneld Fidel Castro Pari,Male,87,U,Ficapro,2,530100,1296,96.00,0.00,0.00,96.00
-3,200826,Jaime Antonio Rodriguez Phillco,Male,200,-,jaime_smurf_XD,3,133700,1206,92.00,0.00,0.00,92.00
-4,215733,Jhon Efrain Quispe Chura,Male,65,U,zero_speed,4,423100,1443,88.00,0.00,0.00,88.00
-5,235389,Steffano Ricardo Caballero Zegarra,Male,65,U,funableforces,5,245700,1094,84.00,0.00,0.00,84.00
-6,231442,Yamir Wagner Florez Vega,Male,0,-,WagnerYFV,6,346400,1190,80.00,0.00,0.00,80.00
-7,240447,Oscar Alex Quispe Chura,Male,44,U,EL_MOJON,7,252900,1103,76.00,0.00,0.00,76.00
-8,231447,Rosy Aurely Montalvo Solórzano,Female,87,U,B1tR0s3s,8,361100,915,72.00,0.00,0.00,72.00
-9,230971,Jose Daniel Mendoza Quispe,Male,87,U,F4nk1,9,1059900,1424,68.00,0.00,0.00,68.00
-10,225461,Jhon Andherson Quispe Llavilla,Male,89,U,Tomioka_1809,10,133500,0,64.00,0.00,0.00,64.00
-11,241440,Jose Omar Miranda Totocayo,Male,44,U,Jepeto,11,144200,930,60.00,0.00,0.00,60.00
-12,240772,Andres Aparicio Auccacusi Quispe Ynga ,Male,44,U,Gabe_1,12,66900,752,56.00,0.00,0.00,56.00
-13,231444,Jhoel Fabrizzio Magaña Osorio,Male,87,U,Maganax,13,292100,881,52.00,0.00,0.00,52.00
-14,210920,Andric Jeremy Bueno Lescano,Male,165,U,AndricBueno,14,14400,760,48.00,0.00,0.00,48.00
-15,231907,Renzo Sebastian Quispe Pinares,Male,65,U,cbada,15,77900,921,44.00,0.00,0.00,44.00
-16,224874,Timoteo Quispe Merma,Male,116,U,_Timothy_2002,16,0,0,40.00,0.00,0.00,40.00
-17,222067,Aracely Fiorela Corampa Palacios,Female,120,U,dbarafiocpenglish,17,46300,0,36.00,0.00,0.00,36.00
-18,231454,Sebastián Juvenal Velarde Delgado,Male,44,U,sebas_uwu,18,34800,0,32.00,0.00,0.00,32.00
-19,210411,Ismael Gerson Ramos Alvarez,Male,144,U,_howl,19,10900,441,28.00,0.00,0.00,28.00
-20,220553,Yeferson Supa Cusipaucar,Male,123,U,YefersonSC,20,117800,640,24.00,0.00,0.00,24.00
-21,140984,Dennis Moises Ccapatinta Qqueccaño,Male,177,U,xdes,20,0,0,24.00,0.00,0.00,24.00
-22,235395,Diego Alonso Quispe Castilla,Male,57,U,DIXTER,20,21500,929,24.00,0.00,0.00,24.00
-23,145003,Hector Paolo Barazorda Cuellar,Male,135,U,hectortilla,20,0,0,24.00,0.00,0.00,24.00
-24,231446,Adel Alejandro Merma Ccarhuarupay,Male,83,U,Adel0_mcc,20,200100,1132,24.00,0.00,0.00,24.00
-25,211361,Eduardo Torre Cano,Male,182,U,Eduardo.T.C,20,2400,801,24.00,0.00,0.00,24.00
+1,231865,Rayneld Fidel Castro Pari,Male,87,U,Ficapro,2,127,1296,86.40,10.00,0.00,96.40
+2,204321,Yishar Piero Nieto Barrientos,Male,183,U,mazapaN_,1,19,1622,90.00,1.50,0.00,91.50
+3,215733,Jhon Efrain Quispe Chura,Male,65,U,zero_speed,4,52,1443,79.20,4.09,0.00,83.29
+4,200826,Jaime Antonio Rodriguez Phillco,Male,200,-,jaime_smurf_XD,3,4,1206,82.80,0.31,0.00,83.11
+5,235389,Steffano Ricardo Caballero Zegarra,Male,65,U,funableforces,5,43,1094,75.60,3.39,0.00,78.99
+6,231442,Yamir Wagner Florez Vega,Male,0,-,WagnerYFV,6,25,1190,72.00,1.97,0.00,73.97
+7,240447,Oscar Alex Quispe Chura,Male,44,U,EL_MOJON,7,43,1103,68.40,3.39,0.00,71.79
+8,230971,Jose Daniel Mendoza Quispe,Male,87,U,F4nk1,9,109,1424,61.20,8.58,0.00,69.78
+9,231447,Rosy Aurely Montalvo Solórzano,Female,87,U,B1tR0s3s,8,25,915,64.80,1.97,0.00,66.77
+10,225461,Jhon Andherson Quispe Llavilla,Male,89,U,Tomioka_1809,10,1,0,57.60,0.08,0.00,57.68
+11,241440,Jose Omar Miranda Totocayo,Male,44,U,Jepeto,11,32,930,54.00,2.52,0.00,56.52
+12,240772,Andres Aparicio Auccacusi Quispe Ynga ,Male,44,U,Gabe_1,12,7,752,50.40,0.55,0.00,50.95
+13,231444,Jhoel Fabrizzio Magaña Osorio,Male,87,U,Maganax,13,23,881,46.80,1.81,0.00,48.61
+14,210920,Andric Jeremy Bueno Lescano,Male,165,U,AndricBueno,14,0,760,43.20,0.00,0.00,43.20
+15,231907,Renzo Sebastian Quispe Pinares,Male,65,U,cbada,15,3,921,39.60,0.24,0.00,39.84
+16,224874,Timoteo Quispe Merma,Male,116,U,_Timothy_2002,16,0,0,36.00,0.00,0.00,36.00
+17,222067,Aracely Fiorela Corampa Palacios,Female,120,U,dbarafiocpenglish,17,2,0,32.40,0.16,0.00,32.56
+18,231454,Sebastián Juvenal Velarde Delgado,Male,44,U,sebas_uwu,18,34,0,28.80,2.68,0.00,31.48
+19,210411,Ismael Gerson Ramos Alvarez,Male,144,U,_howl,19,7,441,25.20,0.55,0.00,25.75
+20,231446,Adel Alejandro Merma Ccarhuarupay,Male,83,U,Adel0_mcc,20,22,1132,21.60,1.73,0.00,23.33
+21,220553,Yeferson Supa Cusipaucar,Male,123,U,YefersonSC,20,8,640,21.60,0.63,0.00,22.23
+22,235395,Diego Alonso Quispe Castilla,Male,57,U,DIXTER,20,4,929,21.60,0.31,0.00,21.91
+23,140984,Dennis Moises Ccapatinta Qqueccaño,Male,177,U,xdes,20,0,0,21.60,0.00,0.00,21.60
+24,145003,Hector Paolo Barazorda Cuellar,Male,135,U,hectortilla,20,0,0,21.60,0.00,0.00,21.60
+25,211361,Eduardo Torre Cano,Male,182,U,Eduardo.T.C,20,0,801,21.60,0.00,0.00,21.60
