@@ -62,7 +62,7 @@ La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 | 5 | 240447 | Oscar Alex Quispe Chura |  |  |  | Pendiente |
 | 6 | 230971 | Jose Daniel Mendoza Quispe |  |  |  | Pendiente |
 
-Consultar las [Reglas de Selección](../Ranking.md#reglas-de-selección-minimo-de-2-problemas-resueltos-1) antes de aceptar la asistencia al evento!
+Consultar las [Compromiso y Requisitos de Selección](../Ranking.md#compromiso-y-requisitos-de-selección) antes de aceptar la asistencia al evento!
 
 ## Próximos pasos
 - Registrarse para el Training Camp Argentina 2025 a través del [Formulario de Google](https://docs.google.com/forms/d/e/1FAIpQLSdLZTFTqlv4tptvv-tZQtWJkfWPlHRk6thsUQUUmtC8Hm4lDw/viewform)
