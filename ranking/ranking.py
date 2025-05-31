@@ -115,15 +115,15 @@ class User:
             # Accumulate problem rating avoid duplicates
             if  key not in problemSolved and submissions['verdict'] == "OK" and "rating" in submissions["problem"]:      
                 # Use Rating instead of just count
-                # self.totalRatingSolvedProblems += submissions["problem"]["rating"]
-                self.totalRatingSolvedProblems += 1
+                self.totalRatingSolvedProblems += submissions["problem"]["rating"]
+                # self.totalRatingSolvedProblems += 1
                 problemSolved[key] = True
 
             # Training contest problems have 1000 of raiting
             if  key not in problemSolved and "rating" not in submissions["problem"]:
                 # Use Rating instead of just count
-                # self.totalRatingSolvedProblems += 1000
-                self.totalRatingSolvedProblems += 1
+                self.totalRatingSolvedProblems += 1000
+                # self.totalRatingSolvedProblems += 1
                 problemSolved[key] = True
 
 class Ranking:
