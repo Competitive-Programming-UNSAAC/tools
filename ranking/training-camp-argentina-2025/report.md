@@ -55,12 +55,20 @@ La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 
 | Ranking | Código | Nombre | DNI | Fecha de Nacimiento | Contacto | Asistencia |
 | - | - | - | - | - | - | - |
-| 1 | 231865 | Rayneld Fidel Castro Pari |  |  | | Pendiente |
-| 2 | 204321 | Yishar Piero Nieto Barrientos |  |  |  | Pendiente |
-| 3 | 215733 | Jhon Efrain Quispe Chura |  |  |  | Pendiente |
-| 4 | 235389 | Steffano Ricardo Caballero Zegarra |  |  |  | Pendiente |
-| 5 | 240447 | Oscar Alex Quispe Chura |  |  |  | Pendiente |
-| 6 | 230971 | Jose Daniel Mendoza Quispe |  |  |  | Pendiente |
+| 1 | 231865 | Rayneld Fidel Castro Pari |  |  | | No |
+| 2 | 204321 | Yishar Piero Nieto Barrientos |  |  |  | Si |
+| 3 | 215733 | Jhon Efrain Quispe Chura |  |  |  | No |
+| 4 | 200826 | Jaime Antonio Rodriguez Phillco |  |  |  | Si (X) |
+| 5 | 235389 | Steffano Ricardo Caballero Zegarra |  |  |  | No |
+| 6 | 231442 | Yamir Wagner Florez Vega |  |  |  | Si |
+| 7 | 240447 | Oscar Alex Quispe Chura |  |  |  | No |
+| 8 | 230971 | Jose Daniel Mendoza Quispe |  |  |  | Si |
+| 9 | 231447 | Rosy Aurely Montalvo Solórzano |  |  |  | Ausente |
+| 10| 225461 | Jhon Andherson Quispe Llavilla |  |  |  | Ausente |
+| 11| 241440 | Jose Omar Miranda Totocayo |  |  |  | Ausente |
+| 12| 240772 | Andres Aparicio Auccacusi Quispe Ynga |  |  |  | Ausente |
+| 13| 231444 | Jhoel Fabrizzio Magaña Osorio |  |  |  | Ausente |
+	
 
 Consultar las [Compromiso y Requisitos de Selección](../Ranking.md#compromiso-y-requisitos-de-selección) antes de aceptar la asistencia al evento!
 
