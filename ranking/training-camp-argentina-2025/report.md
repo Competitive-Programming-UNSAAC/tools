@@ -49,7 +49,7 @@ La información completa del ranking generada por el script para la selección d
 
 ![Imagen de ranking](ranking.png)
 
-## Selección [EN PROGRESO]
+## Selección
 
 La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 
@@ -57,8 +57,8 @@ La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 | - | - | - | - | - | - | - |
 | 1 | 231865 | Rayneld Fidel Castro Pari |  |  | | No |
 | 2 | 204321 | Yishar Piero Nieto Barrientos |  |  |  | Si |
-| 3 | 215733 | Jhon Efrain Quispe Chura |  |  |  | No |
-| 4 | 200826 | Jaime Antonio Rodriguez Phillco |  |  |  | Si (X) |
+| 3 | 215733 | Jhon Efrain Quispe Chura |  |  |  | Si |
+| 4 | 200826 | Jaime Antonio Rodriguez Phillco |  |  |  | Si |
 | 5 | 235389 | Steffano Ricardo Caballero Zegarra |  |  |  | No |
 | 6 | 231442 | Yamir Wagner Florez Vega |  |  |  | Si |
 | 7 | 240447 | Oscar Alex Quispe Chura |  |  |  | No |
