@@ -63,12 +63,9 @@ La lista final de estudiantes seleccionados se resume en la siguiente tabla:
 | 6 | 231442 | Yamir Wagner Florez Vega |  |  |  | Si |
 | 7 | 240447 | Oscar Alex Quispe Chura |  |  |  | No |
 | 8 | 230971 | Jose Daniel Mendoza Quispe |  |  |  | Si |
-| 9 | 231447 | Rosy Aurely Montalvo Solórzano |  |  |  | Ausente |
-| 10| 225461 | Jhon Andherson Quispe Llavilla |  |  |  | Ausente |
-| 11| 241440 | Jose Omar Miranda Totocayo |  |  |  | Ausente |
-| 12| 240772 | Andres Aparicio Auccacusi Quispe Ynga |  |  |  | Ausente |
-| 13| 231444 | Jhoel Fabrizzio Magaña Osorio |  |  |  | Ausente |
-	
+| 9 | 231447 | Rosy Aurely Montalvo Solórzano |  |  |  | No |
+| 10| 225461 | Jhon Andherson Quispe Llavilla |  |  |  | Si |
+
 
 Consultar las [Compromiso y Requisitos de Selección](../Ranking.md#compromiso-y-requisitos-de-selección) antes de aceptar la asistencia al evento!
 
